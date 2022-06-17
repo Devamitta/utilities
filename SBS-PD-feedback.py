@@ -18,6 +18,17 @@ df = df.loc[filter]
 # make Feedback
 df.insert(39, 'Feedback', "<a href=\"https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500="+df['Pāli1']+"\">feedback</a>")
 
+# make double tags
+df.insert(40, 'Tags', None)
+
+df["Tags"] = df["Pali chant 2"]
+
+test3 = df['Pali chant 3'] != ""
+filter = test3
+df.loc[filter, ['Tags']] = df['Pali chant 2'] + " " + df['Pali chant 3']
+
+# sort by Index
+df = df.sort_values(by=['Index', 'Example 2'])
 
 # save csv
 df.to_csv("/home/deva/Documents/dps/spreadsheets/sbs-pd.csv", sep="\t", index=None)

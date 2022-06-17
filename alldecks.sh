@@ -101,10 +101,53 @@ cd "/home/deva/Documents/dps/exporter/share"
 mv "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/SBS_Pāli_Dictionary/sbs-pd.zip"
 mv "ПалиСловарь.zip" "/home/deva/Documents/sasanarakkha/study-tools/Пали_Словарь/ПалиСловарь.zip"
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "SBS PED and Пали Словарь moved for share"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Please update Pātimokkha Word by Word.ods" 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+cd "/home/deva/Documents/sasanarakkha/patimokkha-analysis"
+
+while true; do
+    read -p "Pātimokkha ODS is up-to-date?" yn
+    case $yn in
+        [Yy]* ) bash makecsv.sh; break;;
+        [Nn]* ) exit;;
+        *  ) echo "only yes or no";;
+    esac
+done
+
+mv "Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Pātimokkha for Anki moved for spreadsheets"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "SBS PED and Пали Словарь moved for share"
+echo "Please open Anki and import SBS-PED ; PAT ; DHP & DPS" 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+cd "/home/deva/Documents/dps/scripts"
+
+while true; do
+    read -p "Move decks to share?" yn
+    case $yn in
+        [Yy]* ) bash move.sh; break;;
+        [Nn]* ) exit;;
+        *  ) echo "only yes or no";;
+    esac
+done
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Anki decks and csv of SBS-PED ; PAT ; DHP & DPS moved for share"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Please open VSCode study-tools.code-workspace and push" 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 

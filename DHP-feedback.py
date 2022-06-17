@@ -34,14 +34,14 @@ df_combined.sort_values(by="Pāli1")
 
 # choosing order of columns
 
-df_combined = df_combined[['Pāli1', 'POS', 'Grammar', 'Derived from', 'Neg', 
-       'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Meaning in native language', 'Pāli Root', 'Base',  
-       'Construction', 'Sanskrit', 'Sk Root', 
-       'Variant', 'Commentary', 'Notes', 
-       'Source1', 'Sutta1', 'Example1', 'Source 2', 'Sutta2', 'Example 2', 'Test']]
+# df_combined = df_combined[['Pāli1', 'POS', 'Grammar', 'Derived from', 'Neg', 
+#        'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Meaning in native language', 'Pāli Root', 'Base',  
+#        'Construction', 'Sanskrit', 'Sk Root', 
+#        'Variant', 'Commentary', 'Notes', 
+#        'Source1', 'Sutta1', 'Example1', 'Source 2', 'Sutta2', 'Example 2', 'Test']]
 
 # make Feedback
-df_combined.insert(25, 'Feedback', "<a href=\"https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500="+df['Pāli1']+"\">feedback</a>")
+df_combined.insert(39, 'Feedback', "<a href=\"https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500="+df['Pāli1']+"\">feedback</a>")
 
 
 # save csv
