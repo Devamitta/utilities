@@ -11,3 +11,5 @@ mv "Pātimokkha Word By Word.apkg" "/home/deva/Documents/sasanarakkha/study-tool
 mv "_Pāli.apkg" "/home/deva/Documents/sasanarakkha/study-tools/Anki_Decks/Пали_Словарь_Анки/Pāli.apkg"
 mv "SBS Pāli-English Vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/Anki_Decks/SBS_Pāli-English_Vocab/SBS Pāli-English Vocab.apkg"
 mv "DHP vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/Anki_Decks/DHP_Vocab/DHP vocab.apkg"
+mv "Ñāṇatiloka Dictionary.apkg" "/home/deva/Documents/sasanarakkha/study-tools/Anki_Decks/Ñāṇatiloka_Dictionary/Ñāṇatiloka Dictionary.apkg"
+mv "Sutta Q&A.apkg" "/home/deva/Documents/sasanarakkha/study-tools/Anki_Decks/Sutta_Q&A/Sutta Q&A.apkg"
