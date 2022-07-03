@@ -1,5 +1,5 @@
-#exec &> ~/mkall-errors.txt
-#
+exec &> ~/mkall-errors.txt
+
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -35,14 +35,12 @@ python3.10 "inflection generator.py"
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "../exporter"
-#git switch SBS
+git switch SBS
 #source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-ppoq9hjb-py3.10/bin/activate
 source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-uJ6yRP2M-py3.10/bin/activate
 poetry shell
 python3.10 exporter.py run-generate-html-and-json
 python3.10 exporter.py run-generate-goldendict
-python3.10 exporter.py run-generate-html-and-json-sbs
-python3.10 exporter.py run-generate-goldendict-sbs
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -50,20 +48,17 @@ date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
-#echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-#echo "SBS PED generated"
-#echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-#
-#cd "../exporter"
-#git switch mer
-#source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-ppoq9hjb-py3.10/bin/activate
-#source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-uJ6yRP2M-py3.10/bin/activate
-#poetry shell
-#python3.10 exporter.py run_generate_html_and_json
-#python3.10 exporter.py run_generate_goldendict
-#python3.10 exporter.py run_generate_html_and_json_sbs
-#python3.10 exporter.py run_generate_goldendict_sbs
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "SBS PED generated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
+cd "../exporter"
+git switch main
+#source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-ppoq9hjb-py3.10/bin/activate
+source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-uJ6yRP2M-py3.10/bin/activate
+poetry shell
+python3.10 exporter.py run-generate-html-and-json
+python3.10 exporter.py run-generate-goldendict
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -81,5 +76,5 @@ python3 "unzipDPS.py"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
 
-#xed ~/mkall-errors.txt
+xed ~/mkall-errors.txt
 
