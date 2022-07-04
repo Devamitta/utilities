@@ -1,5 +1,5 @@
-#exec &> ~/mkall-errors.txt
-#
+exec &> ~/mkall-errors.txt
+
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -81,5 +81,5 @@ python3 "unzipDPS.py"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
 
-#xed ~/mkall-errors.txt
+xed ~/mkall-errors.txt
 
