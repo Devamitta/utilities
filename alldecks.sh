@@ -56,8 +56,7 @@ python3.10 "inflection generator.py"
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "../exporter"
-#git switch SBS
-#source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-ppoq9hjb-py3.10/bin/activate
+
 source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-uJ6yRP2M-py3.10/bin/activate
 poetry shell
 python3.10 exporter.py run-generate-html-and-json
@@ -78,15 +77,6 @@ echo "Пали-Русско-Пали Словарь создан"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
-#cd "../exporter"
-#git switch main
-#source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-ppoq9hjb-py3.10/bin/activate
-#source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-uJ6yRP2M-py3.10/bin/activate
-#poetry shell
-#python3.10 exporter.py run-generate-html-and-json
-#python3.10 exporter.py run-generate-goldendict
-
-
 echo "unzip and copy to GoldenDict"
 cd "/home/deva/Documents/dps/scripts"
 python3 "unzipDPS.py"
@@ -94,9 +84,9 @@ python3 "unzipDPS.py"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
 
-cd "/home/deva/Documents/dps/exporter/share"
-mv "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/SBS_Pāli_Dictionary/sbs-pd.zip"
-mv "ПалиСловарь.zip" "/home/deva/Documents/sasanarakkha/study-tools/Пали_Словарь/ПалиСловарь.zip"
+#cd "/home/deva/Documents/dps/exporter/share"
+#mv "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/SBS_Pāli_Dictionary/sbs-pd.zip"
+#mv "ПалиСловарь.zip" "/home/deva/Documents/sasanarakkha/study-tools/Пали_Словарь/ПалиСловарь.zip"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "SBS PED and Пали Словарь moved for share"
@@ -117,7 +107,7 @@ while true; do
     esac
 done
 
-mv "Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
+cp "Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Pātimokkha for Anki moved for spreadsheets"
@@ -144,7 +134,21 @@ echo "Anki decks and csv of SBS-PED ; PAT ; DHP & DPS moved for share"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Please open VSCode study-tools.code-workspace and push" 
+echo "Analisis up-to-date?"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
+cd "/home/deva/Documents/dps/temp-push"
+
+while true; do
+    read -p "push?" yn
+    case $yn in
+        [Yy]* ) bash github-assets-uploader.sh; break;;
+        [Nn]* ) exit;;
+        *  ) echo "only yes or no";;
+    esac
+done
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "the job is done"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
