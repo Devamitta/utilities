@@ -17,28 +17,28 @@ date
 
 cd "/home/deva/Documents/dps/scripts"
 
-python3 "random_test.py"
+python3 "random-test.py"
 
 echo "make dps-test with random number"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
-python3 "SBS-PD-feedback.py"
+python3 "sbs-pd-feedback.py"
 
 echo "filter SBS words from DPS"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
-python3 "DHP-feedback.py"
+python3 "dhp-feedback.py"
 
 echo "filter DHP words from DPS"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
-python3 "feedback_dps.py"
+python3 "feedback-dps.py"
 
 echo "add feedback to DPS"
 
@@ -79,7 +79,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "unzip and copy to GoldenDict"
 cd "/home/deva/Documents/dps/scripts"
-python3 "unzipDPS.py"
+python3 "unzip-dps.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
@@ -107,7 +107,7 @@ while true; do
     esac
 done
 
-cp "Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
+cp "curated_sources/Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Pātimokkha for Anki moved for spreadsheets"
@@ -137,7 +137,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Analisis up-to-date?"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-cd "/home/deva/Documents/dps/temp-push"
+cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push"
 
 while true; do
     read -p "push?" yn

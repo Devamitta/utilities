@@ -35,7 +35,7 @@ With every next update, this 'test number' will be different.
 
 """)
 
-with open('/home/deva/Documents/sasanarakkha/study-tools/Anki_Decks/SBS_Pāli-English_Vocab/test.md', 'w') as f:
+with open('/home/deva/Documents/sasanarakkha/study-tools/test.md', 'w') as f:
     f.write(result_markdown_1)
 f.close()
 
@@ -55,6 +55,6 @@ result_markdown_2 = markdown.markdown(f"""
 
 """)
 
-with open('/home/deva/Documents/sasanarakkha/study-tools/Anki_Decks/Пали_Словарь_Анки/тест.md', 'w') as f:
+with open('/home/deva/Documents/sasanarakkha/study-tools/тест.md', 'w') as f:
     f.write(result_markdown_2)
 f.close()

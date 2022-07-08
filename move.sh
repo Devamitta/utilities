@@ -2,12 +2,12 @@ cp "/home/deva/Documents/Docs/SBS/analysis of SBS Pāli-English Recitations.pdf"
 
 cd "/home/deva/Documents/dps/exporter/share"
 cp "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.zip"
-cp "ПалиСловарь.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ПалиСловарь.zip"
+cp "ПалиСловарь.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/pali-ru-dict.zip"
 
 cd "/home/deva/Documents/dps/spreadsheets"
 
 mv "Pātimokkha for Anki.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/pātimokkha-word-by-word.csv"
-mv "dps-feedback.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/пали-словарь.csv" 
+mv "dps-feedback.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/pali-ru-dict.csv" 
 mv "sbs-pd.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.csv"
 mv "dhp_bold.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp.csv"
 
@@ -19,7 +19,7 @@ mv "dhp_bold.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp.c
 cd "/home/deva/Downloads"
 
 mv "Pātimokkha Word By Word.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/pātimokkha-word-by-word.apkg"
-mv "-Pāli.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/пали-словарь.apkg"
+mv "-Pāli.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/pali-ru-dict.apkg"
 mv "SBS Pāli-English Vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pāli-english-vocab.apkg"
 mv "DHP vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp-vocab.apkg"
 mv "Ñāṇatiloka Dictionary.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ñāṇatiloka-dictionary.apkg"
