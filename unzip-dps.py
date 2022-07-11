@@ -8,6 +8,6 @@ with ZipFile(f'/home/deva/Documents/dps/exporter/share/sbs-pd.zip', 'r') as zipO
    # Extract all the contents of zip file in current directory
    zipObj.extractall('/home/deva/Documents/GoldenDict')
 
-with ZipFile(f'/home/deva/Documents/dps/exporter/share/ПалиСловарь.zip', 'r') as zipObj:
+with ZipFile(f'/home/deva/Documents/dps/exporter/share/ru-pali-dictionary.zip', 'r') as zipObj:
    # Extract all the contents of zip file in current directory
    zipObj.extractall('/home/deva/Documents/GoldenDict')
