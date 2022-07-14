@@ -2,23 +2,23 @@ cp "/home/deva/Documents/Docs/SBS/analysis of SBS Pāli-English Recitations.pdf"
 
 cd "/home/deva/Documents/dps/exporter/share"
 cp "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.zip"
-cp "ПалиСловарь.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-dictionary.zip"
+cp "ru-pali-dictionary.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-dict.zip"
 
 cd "/home/deva/Documents/dps/spreadsheets"
 
 cp "Pātimokkha for Anki.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Pātimokkha Word By Word/patimokkha-word-by-word.csv"
 mv "Pātimokkha for Anki.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/patimokkha-word-by-word.csv"
-cp
+cp "dps-feedback.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)//Пали Словарь Анки/ru-pali-vocab.csv"
 mv "dps-feedback.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-vocab.csv" 
-cp
+cp "sbs-pd.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/SBS Pāli-English Vocab/sbs-pd.csv"
 mv "sbs-pd.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.csv"
-cp
+cp "dhp_bold.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/DHP Vocab/dhp-vocab.csv"
 mv "dhp_bold.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp-vocab.csv"
 
 
 cd "/home/deva/Downloads"
 
-cp "Pātimokkha Word By Word.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Pātimokkha Word By Word/atimokkha-word-by-word.apkg"
+cp "Pātimokkha Word By Word.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Pātimokkha Word By Word/patimokkha-word-by-word.apkg"
 mv "Pātimokkha Word By Word.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/patimokkha-word-by-word.apkg"
 cp "-Pāli.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Пали Словарь Анки/ru-pali-vocab.apkg"
 mv "-Pāli.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-vocab.apkg"

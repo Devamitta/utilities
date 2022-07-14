@@ -57,7 +57,7 @@ date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "../exporter"
 
-source /home/deva/.cache/pypoetry/virtualenvs/dpd-exporter-uJ6yRP2M-py3.10/bin/activate
+source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.10/bin/activate
 poetry shell
 python3.10 exporter.py run-generate-html-and-json
 python3.10 exporter.py run-generate-goldendict
@@ -84,13 +84,6 @@ python3 "unzip-dps.py"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
 
-#cd "/home/deva/Documents/dps/exporter/share"
-#mv "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/SBS_Pāli_Dictionary/sbs-pd.zip"
-#mv "ПалиСловарь.zip" "/home/deva/Documents/sasanarakkha/study-tools/Пали_Словарь/ПалиСловарь.zip"
-
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "SBS PED and Пали Словарь moved for share"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please update Pātimokkha Word by Word.ods" 
@@ -107,7 +100,7 @@ while true; do
     esac
 done
 
-cp "curated_sources/Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
+cp "./curated_sources/Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Pātimokkha for Anki moved for spreadsheets"
