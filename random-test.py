@@ -27,8 +27,9 @@ Dictionaries:
 
 - [SBS Pāli-English Dictionary](https://sasanarakkha.github.io/study-tools/sbs-pali-dictionary.html)
 - [Pāli-Russian Dictionary](https://sasanarakkha.github.io/study-tools/ru-pali-dictionary.html)
+- [Digital Pāḷi Dictionary](https://digitalpalidictionary.github.io/)
 
-Click to download the latest version:
+PDF:
 
 - [SBS Pāli-English Recitations](https://github.com/sasanarakkha/pali-english-recitations/releases/latest/)
 - [Analysis of SBS Pāli-English Recitations](https://github.com/sasanarakkha/study-tools/releases/latest/download/analysis-of-sbs-pali-english-recitations.pdf)
@@ -43,6 +44,7 @@ Anki decks:
 - [SBS Anumodāna](https://sasanarakkha.github.io/study-tools/sbs-anumodana.html)
 - [Sutta Q&A](https://sasanarakkha.github.io/study-tools/sutta-q-a.html)
 - [Russian Anki Deck](https://sasanarakkha.github.io/study-tools/ru-pali-vocab.html)
+- [Ñāṇatiloka Buddhist Dictionary](https://sasanarakkha.github.io/study-tools/nanatiloka.html)
 
 Made available for public testing and [feedback](https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.1433863141=SBS-study-tools).
 

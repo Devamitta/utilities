@@ -1,4 +1,10 @@
 cp "/home/deva/Documents/Docs/SBS/analysis of SBS Pāli-English Recitations.pdf" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/analysis-of-sbs-pāli-english-recitations.pdf" 
+cp "/home/deva/Documents/Docs/SBS/analysis of SBS Pāli-English Recitations.pdf" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/SBS Pāli-English Vocab/analysis-of-sbs-pāli-english-recitations.pdf" 
+
+cp -r "/home/deva/Documents/GoldenDict/dpd" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Golden Dictionary/Default/"
+cp -r "/home/deva/Documents/GoldenDict/sbs-pd" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Golden Dictionary/Default/"
+cp -r "/home/deva/Documents/GoldenDict/ru-pali-dictionary" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Golden Dictionary/Optional/"
+
 
 cd "/home/deva/Documents/dps/exporter/share"
 cp "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.zip"
