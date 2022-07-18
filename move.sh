@@ -37,8 +37,9 @@ mv "Ñāṇatiloka Dictionary.apkg" "/home/deva/Documents/sasanarakkha/study-too
 cp "Sutta Q&A.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Sutta Q&A/sutta-q-a.apkg"
 mv "Sutta Q&A.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sutta-q-a.apkg"
 
+cd "/home/deva/Documents/sasanarakkha/patimokkha-analysis/original_sources"
 
-
+cp "Pātimokkha Word by Word.ods" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Pātimokkha Word By Word/patimokkha-word-by-word.ods"
 
 
 
