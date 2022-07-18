@@ -1,5 +1,9 @@
+bash anki.sh
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+
 cd "/home/deva/Documents/dps/scripts"
-# jupyter nbconvert --to script "suttaFilter.ipynb"
 python3 "suttaFilter.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

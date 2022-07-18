@@ -7,7 +7,7 @@
 import pandas as pd
 import re
 
-df_nid = pd.read_csv("/home/deva/Documents/dpd/spreadsheets/nidh_bold.csv", sep="\t", dtype= str)
+df_nid = pd.read_csv("/home/deva/Documents/dps/spreadsheets/nidh_bold.csv", sep="\t", dtype= str)
 df_nid.fillna("", inplace=True)
 
 df_dps = pd.read_csv("/home/deva/Documents/dps/spreadsheets/dps-full.csv", sep="\t", dtype= str)
