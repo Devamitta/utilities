@@ -8,7 +8,7 @@ import pandas as pd
 from pandas_ods_reader import read_ods 
 import re
 
-df = pd.read_csv("/home/deva/Documents/dpd/csvs/dpd-full.csv", sep="\t", dtype= str)
+df = pd.read_csv("/home/deva/Documents/dpd-br/csvs/dpd-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 
@@ -90,24 +90,27 @@ df['Grammar'] = df['Grammar'].replace({r'^(, )'}, '',  regex=True)
 
 # choosing order of columns
 
+df.insert(17, 'Variant', df['Variant – same constr or diff reading'])
+
+
 df = df[['Pāli1', 'Fin', 'POS', 'Grammar', 'Derived from', 'Neg', 
        'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Pāli Root', 'Base',  
        'Construction', 'Sanskrit', 'Sk Root', 
-       'Variant – same constr or diff reading', 'Commentary', 'Notes', 
+       'Variant', 'Commentary', 'Notes', 
        'Source1', 'Sutta1', 'Example1', 'Source 2', 'Sutta2', 'Example 2',
        'Stem', 'Pattern', 'Category']]
 df.insert(10, 'Ru', None)
 df.insert(11, 'SBS Meaning', None)
-df.insert(26, 'SBS Pali chant name', None)
-df.insert(27, 'SBS English chant name', None)
-df.insert(28, 'SBS Chapter', None)
+df.insert(26, 'Pali chant 2', None)
+df.insert(27, 'English chant 2', None)
+df.insert(28, 'Chapter 2', None)
 df.insert(29, 'Source 3', None)
 df.insert(30, 'Sutta 3', None)
 df.insert(31, 'Example 3', None)
-df.insert(32, 'SBS Pali chant name 3', None)
-df.insert(33, 'SBS English chant name 3', None)
-df.insert(34, 'SBS Chapter 3', None)
-df.insert(35, 'SBS index', None)
+df.insert(32, 'Pali chant 3', None)
+df.insert(33, 'English chant 3', None)
+df.insert(34, 'Chapter 3', None)
+df.insert(35, 'Index', None)
 
 
 # In[9]:

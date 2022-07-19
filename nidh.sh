@@ -1,4 +1,4 @@
-cd "/home/deva/Documents/dpd"
+cd "/home/deva/Documents/dpd-br"
 
 python3.10 "utilities/ods2csv.py"
 

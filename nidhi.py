@@ -8,25 +8,25 @@ import pandas as pd
 from pandas_ods_reader import read_ods 
 import re
 
-df = read_ods("/home/deva/Documents/dpd/spreadsheets/dpd.ods")
+df = read_ods("/home/deva/Documents/dpd-br/spreadsheets/dpd-br.ods")
 df.fillna("", inplace=True)
 df = df.astype(str)
 df.rename(columns=df.iloc[0], inplace = True)
 df.drop([0], inplace = True)
 # saving csv file
-df.to_csv("/home/deva/Documents/dpd/spreadsheets/dpd.csv", sep="\t", index=None)
+df.to_csv("/home/deva/Documents/dpd-br/spreadsheets/dpd.csv", sep="\t", index=None)
 
 
 # In[2]:
 
 
 # convert dpd root list to csv
-df_root = read_ods("/home/deva/Documents/dpd/spreadsheets/dpd.ods", sheet=2)
+df_root = read_ods("/home/deva/Documents/dpd-br/spreadsheets/dpd.ods", sheet=2)
 df_root.fillna("", inplace=True)
 df_root = df_root.astype(str)
 df_root.rename(columns=df_root.iloc[0], inplace = True)
 df_root.drop([0], inplace = True)
-df_root.to_csv("/home/deva/Documents/dpd/spreadsheets/roots.csv", sep="\t", index=None)
+df_root.to_csv("/home/deva/Documents/dpd-br/spreadsheets/roots.csv", sep="\t", index=None)
 
 
 # In[3]:
@@ -131,5 +131,5 @@ df.insert(35, 'SBS index', None)
 
 
 # saving csv file
-df.to_csv("/home/deva/Documents/dpd/spreadsheets/nidh.csv", sep="\t", index=None)
+df.to_csv("/home/deva/Documents/dpd-br/spreadsheets/nidh.csv", sep="\t", index=None)
 
