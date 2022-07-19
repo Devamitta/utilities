@@ -62,7 +62,9 @@ df2["Example1"] = df2["Example 2"]
 
 # combine two lists
 # df_combined = df1 + df2
-df_combined = df1.append(df2)
+# df_combined = df1.append(df2)
+df_combined = pd.concat([df1, df2])
+
 
 # make source2 sutta2 example2 empty
 test0 = df_combined['Pāli1'] != ""

@@ -28,7 +28,9 @@ logix = df_DHP2['Pāli1'].isin(df_DHP1['Pāli1'])
 
 df_DHP4 = df_DHP2.drop(df_DHP2[logix].index)
 
-df_combined = df_DHP1.append(df_DHP4)
+df_combined = pd.concat([df_DHP1, df_DHP4])
+
+# df_combined = df_DHP1.append(df_DHP4)
 
 df_combined.sort_values(by="Pāli1")
 
