@@ -7,10 +7,10 @@
 import pandas as pd
 import re
 
-df_nid = pd.read_csv("/home/deva/Documents/dps/spreadsheets/nidh_bold.csv", sep="\t", dtype= str)
+df_nid = pd.read_csv("../spreadsheets/nidh_bold.csv", sep="\t", dtype= str)
 df_nid.fillna("", inplace=True)
 
-df_dps = pd.read_csv("/home/deva/Documents/dps/spreadsheets/dps-full.csv", sep="\t", dtype= str)
+df_dps = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df_dps.fillna("", inplace=True)
 
 
@@ -91,7 +91,7 @@ df_final = df_final.sort_values(by="Pāli1")
 
 
 # save csv
-df_final.to_csv(f"/home/deva/Documents/dps/spreadsheets/words_from/words_from_{sutta}.csv", sep="\t", index=None)
+df_final.to_csv(f"../spreadsheets/words_from/words_from_{sutta}.csv", sep="\t", index=None)
 
 
 # In[ ]:
@@ -100,5 +100,5 @@ df_final.to_csv(f"/home/deva/Documents/dps/spreadsheets/words_from/words_from_{s
 # print the result
 print ("__________________")
 print (f"done with sutta: {sutta}")
-print ("see folder /home/deva/Documents/dps/spreadsheets/words_from/")
+print ("see folder ../spreadsheets/words_from/")
 

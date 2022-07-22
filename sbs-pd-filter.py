@@ -2,7 +2,7 @@
 import pandas as pd
 import random
 
-df = pd.read_csv("/home/deva/Documents/dps/spreadsheets/dps-full.csv", sep="\t", dtype= str)
+df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # change Meaning in native language
@@ -17,5 +17,5 @@ df = df.loc[filter]
 
 
 # save csv
-df.to_csv("/home/deva/Documents/dps/spreadsheets/sbs-pd.csv", sep="\t", index=None)
+df.to_csv("../spreadsheets/sbs-pd.csv", sep="\t", index=None)
 

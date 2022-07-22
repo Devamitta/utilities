@@ -2,7 +2,7 @@
 import pandas as pd
 import random
 
-df = pd.read_csv("/home/deva/Documents/dps/spreadsheets/dps-test.csv", sep="\t", dtype= str)
+df = pd.read_csv("../spreadsheets/dps-test.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # change Meaning in native language
@@ -35,5 +35,5 @@ df.loc[filter, ['Tags']] = df['Pali chant 2'] + " " + df['Pali chant 3']
 df = df.sort_values(by=['Index', 'Example 2'])
 
 # save csv
-df.to_csv("/home/deva/Documents/dps/spreadsheets/sbs-pd.csv", sep="\t", index=None)
+df.to_csv("../spreadsheets/sbs-pd.csv", sep="\t", index=None)
 

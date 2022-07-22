@@ -2,7 +2,7 @@
 import pandas as pd
 import random
 
-df = pd.read_csv("/home/deva/Documents/dps/spreadsheets/dps-test.csv", sep="\t", dtype= str)
+df = pd.read_csv("../spreadsheets/dps-test.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # change Meaning in native language
@@ -51,5 +51,5 @@ df_combined['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs
 
 
 # save csv
-df_combined.to_csv("/home/deva/Documents/dps/spreadsheets/dhp_bold.csv", sep="\t", index=None)
+df_combined.to_csv("../spreadsheets/dhp_bold.csv", sep="\t", index=None)
 

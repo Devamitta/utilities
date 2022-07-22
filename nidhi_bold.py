@@ -99,7 +99,7 @@ df = df[['Pāli1', 'Fin', 'POS', 'Grammar', 'Derived from', 'Neg',
        'Variant', 'Commentary', 'Notes', 
        'Source1', 'Sutta1', 'Example1', 'Source 2', 'Sutta2', 'Example 2',
        'Stem', 'Pattern', 'Category']]
-df.insert(10, 'Ru', None)
+df.insert(10, 'Meaning in native language', None)
 df.insert(11, 'SBS Meaning', None)
 df.insert(26, 'Pali chant 2', None)
 df.insert(27, 'English chant 2', None)
@@ -117,5 +117,5 @@ df.insert(35, 'Index', None)
 
 
 # saving csv file
-df.to_csv("/home/deva/Documents/dps/spreadsheets/nidh_bold.csv", sep="\t", index=None)
+df.to_csv("../spreadsheets/nidh_bold.csv", sep="\t", index=None)
 

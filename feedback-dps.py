@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("/home/deva/Documents/dps/spreadsheets/dps-test.csv", sep="\t", dtype= str)
+df = pd.read_csv("../spreadsheets/dps-test.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # make Feedback
@@ -12,4 +12,4 @@ df['Feedback'] = f"""Нашли ошибку? <a class="link" href="https://docs
 
 
 # save csv
-df.to_csv("/home/deva/Documents/dps/spreadsheets/dps-feedback.csv", sep="\t", index=None)
+df.to_csv("../spreadsheets/dps-feedback.csv", sep="\t", index=None)

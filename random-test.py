@@ -2,7 +2,7 @@ import pandas as pd
 import random
 import markdown
 
-df = pd.read_csv("/home/deva/Documents/dps/spreadsheets/dps-full.csv", sep="\t", dtype= str)
+df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # generate random number 1-100
@@ -15,7 +15,7 @@ filter = test1
 df.loc[filter, ['Test']] = ran
 
 # save csv
-df.to_csv("/home/deva/Documents/dps/spreadsheets/dps-test.csv", sep="\t", index=None)
+df.to_csv("../spreadsheets/dps-test.csv", sep="\t", index=None)
 
 # make test.md
 result_markdown_1 = markdown.markdown(f"""
