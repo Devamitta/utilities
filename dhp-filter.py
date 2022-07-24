@@ -2,7 +2,7 @@
 import pandas as pd
 import random
 
-df = pd.read_csv("../spreadsheets/dps-test.csv", sep="\t", dtype= str)
+df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # change Meaning in native language
@@ -28,10 +28,17 @@ logix = df_DHP2['Pāli1'].isin(df_DHP1['Pāli1'])
 
 df_DHP4 = df_DHP2.drop(df_DHP2[logix].index)
 
+# move examples from 2 to 1
+df_DHP4["Source1"] = df_DHP4["Source 2"]
+df_DHP4["Sutta1"] = df_DHP4["Sutta2"]
+df_DHP4["Example1"] = df_DHP4["Example 2"]
+
+
 df_combined = pd.concat([df_DHP1, df_DHP4])
 
 # df_combined = df_DHP1.append(df_DHP4)
 
+# df_combined.sort_values(by="Source1")
 df_combined.sort_values(["Source1"], ascending=True, inplace=True)
 
 # choosing order of columns
@@ -48,7 +55,6 @@ df_combined.sort_values(["Source1"], ascending=True, inplace=True)
 # adding feedback
 df_combined.reset_index(drop=True, inplace=True)
 df_combined['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500=""" + df_combined.Pāli1 + """&entry.1433863141=DHP">Fix it here</a>."""
-
 
 # save csv
 df_combined.to_csv("../spreadsheets/dhp_bold.csv", sep="\t", index=None)
