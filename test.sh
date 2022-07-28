@@ -1,17 +1,17 @@
-exec &> ~/mkall-errors.txt
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# echo "making csv with bold"
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-date
+# mv "../spreadsheets/dps.ods" "dps.ods"
 
-node --max-old-space-size=8192 /home/deva/Documents/dps/scripts/dpdods2csv.js ods2csv "/home/deva/Documents/dps/spreadsheets/dps.ods" PALI 40 dps
+# python3 ods-to-csv-headers.py "dps.ods" PALI 39
 
-cd "/home/deva/Documents/dps/spreadsheets"
-rm -R '/home/deva/Documents/dps/spreadsheets/dps-vocab.csv'
-rm -R '/home/deva/Documents/dps/spreadsheets/dps-root.csv'
+# mv "dps.ods" "../spreadsheets/dps.ods"
 
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Done, you can import csv to Anki"
-date
+# mv "dps.csv" "../spreadsheets/dps-full.csv"
+
+# echo "process completed"
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
 cd "/home/deva/Documents/dps/scripts"
@@ -53,9 +53,3 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "unzip and copy to GoldenDict"
 cd "/home/deva/Documents/dps/scripts"
 python3 "unzip-dps.py"
-
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
-
-xed ~/mkall-errors.txt
-
