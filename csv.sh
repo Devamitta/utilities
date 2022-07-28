@@ -18,7 +18,7 @@ python3 nidh-xls-to-csv.py
 echo "nidh completed"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-python3 ods-to-csv.py "../word-frequency/original-sources/frequent-words.ods" words 7
+python3 ods-to-csv.py "../word-frequency/pāli-course/frequent-words.ods" words 7
 
 echo "frequent-words completed"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
