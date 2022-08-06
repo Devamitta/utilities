@@ -3,7 +3,7 @@ exec &> ~/mkall-errors.txt
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
-node --max-old-space-size=8192 /home/deva/Documents/dps/scripts/dpdods2csv.js ods2csv "/home/deva/Documents/dps/spreadsheets/dps.ods" PALI 40 dps
+node --max-old-space-size=8192 /home/deva/Documents/dps/scripts/dpdods2csv.js ods2csv "/home/deva/Documents/dps/spreadsheets/dps.ods" PALI 42 dps
 
 cd "/home/deva/Documents/dps/spreadsheets"
 rm -R '/home/deva/Documents/dps/spreadsheets/dps-vocab.csv'
@@ -39,6 +39,8 @@ python3.10 exporter.py run-generate-html-and-json
 python3.10 exporter.py run-generate-goldendict
 python3.10 exporter.py run-generate-html-and-json-sbs
 python3.10 exporter.py run-generate-goldendict-sbs
+python3.10 exporter.py run-generate-html-and-json-test
+python3.10 exporter.py run-generate-goldendict-test
 
 
 
@@ -47,7 +49,7 @@ date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Пали-Русско-Пали Словарь создан"
+echo "DPS-TEST & Ru-Pāli-Dict & SBS_PD generated"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "unzip and copy to GoldenDict"

@@ -2,23 +2,89 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "making csv with bold"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-# mv "../spreadsheets/dps.ods" "dps.ods"
+while true; do
+    read -p "golden dict need update?" yn
+    case $yn in
+        [Yy]* ) bash test.sh;
+        python3 ods2csv.py "../spreadsheets/dps.ods" PALI; 
+        
+        break;;
+        [Nn]* ) break;;
+        *  ) echo "only yes or no";;
+    esac
+done
 
-python3 ods-to-csv-headers.py "../spreadsheets/dps.ods" PALI 39
 
-# mv "dps.ods" "../spreadsheets/dps.ods"
 
-# mv "dps.csv" "../spreadsheets/dps-class.csv"
-
-echo "dps completed"
+echo "dps up-to-date"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-python3 nidh-xls-to-csv.py
+while true; do
+    read -p "nidh need update?" yn
+    case $yn in
+        [Yy]* ) python3 xls2csv.py "../spreadsheets/nidh_bold.xlsx"; break;;
+        [Nn]* ) break;;
+        *  ) echo "only yes or no";;
+    esac
+done
 
-echo "nidh completed"
+echo "nidh up-to-date"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-python3 ods-to-csv.py "../word-frequency/pāli-course/frequent-words.ods" words 7
+while true; do
+    read -p "friquent-words need update?" yn
+    case $yn in
+        [Yy]* ) python3 ods2csv.py "../word-frequency/pāli-course/frequent-words.ods" words; break;;
+        [Nn]* ) break;;
+        *  ) echo "only yes or no";;
+    esac
+done
 
 echo "frequent-words completed"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+
+
+
+cd "/home/deva/Documents/dps/word-frequency"
+
+python3 pos-maker.py
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "summary-for-class.csv generated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+# cd "/home/deva/Documents/dps/word-frequency/frequent-words-dps"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "classes updated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+
+libreoffice "frequent-words-dps/summary-for-class.csv"
+
+
+while true; do
+    read -p "DPS updated?" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        *  ) echo "only yes or no";;
+    esac
+done
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+
+cd "/home/deva/Documents/dps/scripts"
+
+python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+
+mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Done"
+date
+
+cd "/home/deva/Documents/dps/word-frequency"
+python3 class-feedback.py

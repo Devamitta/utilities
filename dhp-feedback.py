@@ -22,6 +22,8 @@ test5 = df['Sutta2'].str.contains('vaggo')
 filter = test4 & test5
 df_DHP2 = df.loc[filter]
 
+!!! add sourse 3
+
 # if headword from df2 is in df1, then delete whole row from df2
 
 logix = df_DHP2['Pāli1'].isin(df_DHP1['Pāli1'])
