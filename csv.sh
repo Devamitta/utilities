@@ -1,6 +1,22 @@
+
+cd "/home/deva/Documents/dps/word-frequency"
+
+while true; do
+    read -p "grammar-csv for anki need update?" yn
+    case $yn in
+        [Yy]* ) bash test.sh;
+        python3 grammar-csv.py; 
+        break;;
+        [Nn]* ) break;;
+        *  ) echo "only yes or no";;
+    esac
+done
+
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "making csv with bold"
+echo "grammar csv up to date"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+cd "/home/deva/Documents/dps/scripts"
 
 while true; do
     read -p "golden dict need update?" yn
@@ -15,7 +31,7 @@ while true; do
 done
 
 
-
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "dps up-to-date"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 

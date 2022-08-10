@@ -1,16 +1,15 @@
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-date
-
-node --max-old-space-size=8192 /home/deva/Documents/dps/scripts/dpdods2csv.js ods2csv "/home/deva/Documents/dps/spreadsheets/dps.ods" PALI 40 dps
-
-cd "/home/deva/Documents/dps/spreadsheets"
-rm -R '/home/deva/Documents/dps/spreadsheets/dps-vocab.csv'
-rm -R '/home/deva/Documents/dps/spreadsheets/dps-root.csv'
+cd "/home/deva/Documents/dps/scripts"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Done"
-date
+echo "making csv with bold and sorted by pāli alphabet"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
+python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+
+mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
+
+echo "process completed"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 cd "/home/deva/Documents/dps/scripts"
 

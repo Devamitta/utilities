@@ -1,11 +1,13 @@
+cd "/home/deva/Documents/dps/scripts"
+
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-date
+echo "making csv with bold and sorted by pāli alphabet"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-node --max-old-space-size=8192 /home/deva/Documents/dps/scripts/dpdods2csv.js ods2csv "/home/deva/Documents/dps/spreadsheets/dps.ods" PALI 42 dps
+python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
-cd "/home/deva/Documents/dps/spreadsheets"
-rm -R '/home/deva/Documents/dps/spreadsheets/dps-vocab.csv'
-rm -R '/home/deva/Documents/dps/spreadsheets/dps-root.csv'
+mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
+
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Done, you can import csv to Anki"
