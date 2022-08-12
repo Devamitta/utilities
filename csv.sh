@@ -4,8 +4,7 @@ cd "/home/deva/Documents/dps/word-frequency"
 while true; do
     read -p "grammar-csv for anki need update?" yn
     case $yn in
-        [Yy]* ) bash test.sh;
-        python3 grammar-csv.py; 
+        [Yy]* ) python3 grammar-csv.py; 
         break;;
         [Nn]* ) break;;
         *  ) echo "only yes or no";;

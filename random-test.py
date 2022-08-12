@@ -5,6 +5,9 @@ import markdown
 df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
+df = df.drop(['class', 'count'], axis=1)
+print("columns 'class', 'count' has been dropped")
+
 # generate random number 1-100
 ran = random.sample(range(1, 100), 1)
 ran = str(ran[0])

@@ -25,6 +25,10 @@ df['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.google.c
 # make double tags
 df.insert(40, 'Tags', None)
 
+# replace all chant names with '_'
+df['Pali chant 2'] = df['Pali chant 2'].str.replace(' ', '_')
+df['Pali chant 3'] = df['Pali chant 3'].str.replace(' ', '_')
+
 df["Tags"] = df["Pali chant 2"]
 
 test3 = df['Pali chant 3'] != ""
