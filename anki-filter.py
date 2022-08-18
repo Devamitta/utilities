@@ -20,5 +20,5 @@ print("columns 'class', 'count' has been dropped")
 
 
 # save csv
-df_anki.to_csv("../spreadsheets/dps-anki.csv", sep="\t", index=None)
+df_anki.to_csv("../csv-for-anki/dps-anki.csv", sep="\t", index=None)
 

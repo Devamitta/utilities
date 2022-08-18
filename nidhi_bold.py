@@ -35,8 +35,23 @@ df.loc[filter, ['Meaning IN CONTEXT']] = df['Meaning IN CONTEXT'] + "; lit. " + 
 
 
 # change FIN
-filter = test2
-df.loc[filter, ['Fin']] = "p"
+test3 = df['Example 2'] != ""
+test4 = df['Example1'] != ""
+filter = test2 & test3 & test4
+
+df.loc[filter, ['Fin']] = "nn"
+
+test3 = df['Example 2'] == ""
+test4 = df['Example1'] != ""
+filter = test2 & test3 & test4
+
+df.loc[filter, ['Fin']] = "n"
+
+test3 = df['Example 2'] == ""
+test4 = df['Example1'] == ""
+filter = test2 & test3 & test4
+
+df.loc[filter, ['Fin']] = ""
 
 
 # In[5]:
@@ -91,26 +106,26 @@ df['Grammar'] = df['Grammar'].replace({r'^(, )'}, '',  regex=True)
 # choosing order of columns
 
 df.insert(17, 'Variant', df['Variant – same constr or diff reading'])
-
-
-df = df[['Pāli1', 'Fin', 'POS', 'Grammar', 'Derived from', 'Neg', 
-       'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Pāli Root', 'Base',  
-       'Construction', 'Sanskrit', 'Sk Root', 
-       'Variant', 'Commentary', 'Notes', 
-       'Source1', 'Sutta1', 'Example1', 'Source 2', 'Sutta2', 'Example 2',
-       'Stem', 'Pattern', 'Category']]
+df.insert(2, 'Ex', None)
 df.insert(10, 'Meaning in native language', None)
 df.insert(11, 'SBS Meaning', None)
-df.insert(26, 'Pali chant 2', None)
-df.insert(27, 'English chant 2', None)
-df.insert(28, 'Chapter 2', None)
-df.insert(29, 'Source 3', None)
-df.insert(30, 'Sutta 3', None)
-df.insert(31, 'Example 3', None)
-df.insert(32, 'Pali chant 3', None)
-df.insert(33, 'English chant 3', None)
-df.insert(34, 'Chapter 3', None)
-df.insert(35, 'Index', None)
+df.insert(25, 'Pali chant 1', None)
+df.insert(26, 'English chant 1', None)
+df.insert(27, 'Chapter 1', None)
+df.insert(29, 'Pali chant 2', None)
+df.insert(30, 'English chant 2', None)
+df.insert(31, 'Chapter 2', None)
+df.insert(32, 'Source 3', None)
+df.insert(33, 'Sutta 3', None)
+df.insert(34, 'Example 3', None)
+df.insert(35, 'Pali chant 3', None)
+df.insert(36, 'English chant 3', None)
+df.insert(37, 'Chapter 3', None)
+df.insert(38, 'Index', None)
+
+
+df = df[['Pāli1', 'Fin', 'Ex', 'POS', 'Grammar', 'Derived from', 'Neg', 'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Meaning in native language', 'SBS Meaning', 'Pāli Root', 'Base', 'Construction', 'Sanskrit', 'Sk Root', 'Variant', 'Commentary', 'Notes', 'Source1', 'Sutta1', 'Example1', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Source 2', 'Sutta2', 'Example 2', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Source 3', 'Sutta 3', 'Example 3', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Index', 'Stem', 'Pattern', 'Category']]
+
 
 
 # In[9]:
