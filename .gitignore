@@ -1,2 +1,4 @@
 .DS_Store
 test*
+__pycache__/
+sorter.cpython-310.pyc

@@ -1,0 +1,1 @@
+cp -rf home/deva/Documents/GoldenDict/sbs-pd /home/deva/filesrv1/share1/Sharing\ between\ users/1\ For\ Everyone/Software/Golden\ Dictionary/Default/

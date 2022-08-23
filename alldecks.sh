@@ -44,8 +44,8 @@ date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "../exporter"
 
-source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.10/bin/activate
-poetry shell
+# source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.10/bin/activate
+# poetry shell
 python3.10 exporter.py run-generate-html-and-json
 python3.10 exporter.py run-generate-goldendict
 python3.10 exporter.py run-generate-html-and-json-sbs
