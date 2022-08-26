@@ -17,18 +17,45 @@ filter = test2 & test3
 df_DHP1 = df.loc[filter]
 
 # filter all DHP from Source2
-test4 = df['Source 2'].str.contains('DHP')
+test2 = ~df['Source1'].str.contains('DHP')
+test4 = df['Source2'].str.contains('DHP')
 test5 = df['Sutta2'].str.contains('vaggo')
-filter = test4 & test5
+filter = test2 & test4 & test5
 df_DHP2 = df.loc[filter]
 
-!!! add sourse 3
+# move examples from 2 to 1
+df_DHP2["Source1"] = df_DHP2["Source2"]
+df_DHP2["Sutta1"] = df_DHP2["Sutta2"]
+df_DHP2["Example1"] = df_DHP2["Example2"]
+
+df_DHP2["Source2"] = ""
+df_DHP2["Sutta2"] = ""
+df_DHP2["Example2"] = ""
+
+# filter all DHP from Source3
+test2 = ~df['Source1'].str.contains('DHP')
+test3 = ~df['Source2'].str.contains('DHP')
+test4 = df['Source3'].str.contains('DHP')
+test5 = df['Sutta3'].str.contains('vaggo')
+filter = test2 & test3 & test4 & test5
+df_DHP3 = df.loc[filter]
+
+# move examples from 3 to 1
+df_DHP3["Source1"] = df_DHP3["Source3"]
+df_DHP3["Sutta1"] = df_DHP3["Sutta3"]
+df_DHP3["Example1"] = df_DHP3["Example3"]
+
+df_DHP2["Source3"] = ""
+df_DHP2["Sutta3"] = ""
+df_DHP2["Example3"] = ""
+
+
 
 # if headword from df2 is in df1, then delete whole row from df2
 
-logix = df_DHP2['Pāli1'].isin(df_DHP1['Pāli1'])
+# logix = df_DHP2['Pāli1'].isin(df_DHP1['Pāli1'])
 
-df_DHP4 = df_DHP2.drop(df_DHP2[logix].index)
+# df_DHP4 = df_DHP2.drop(df_DHP2[logix].index)
 
 df_combined = pd.concat([df_DHP1, df_DHP4])
 
@@ -42,7 +69,7 @@ df_combined.sort_values(["Source1"], ascending=True, inplace=True)
 #        'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Meaning in native language', 'Pāli Root', 'Base',  
 #        'Construction', 'Sanskrit', 'Sk Root', 
 #        'Variant', 'Commentary', 'Notes', 
-#        'Source1', 'Sutta1', 'Example1', 'Source 2', 'Sutta2', 'Example 2', 'Test']]
+#        'Source1', 'Sutta1', 'Example1', 'Source2', 'Sutta2', 'Example2', 'Test']]
 
 # make Feedback
 # df_combined.insert(39, 'Feedback', "<a href=\"https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500="+df['Pāli1']+"\">feedback</a>")

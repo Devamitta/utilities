@@ -36,7 +36,7 @@ filter = test3
 df.loc[filter, ['Tags']] = df['Pali chant 2'] + " " + df['Pali chant 3']
 
 # sort by Index
-df = df.sort_values(by=['Index', 'Example 2'])
+df = df.sort_values(by=['Index', 'Example2'])
 
 # save csv
 df.to_csv("../spreadsheets/sbs-pd.csv", sep="\t", index=None)

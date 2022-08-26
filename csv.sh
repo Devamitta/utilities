@@ -18,10 +18,9 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "/home/deva/Documents/dps/scripts"
 
 while true; do
-    read -p "golden dict need update?" yn
+    read -p "dps need update?" yn
     case $yn in
-        [Yy]* ) bash test.sh;
-        python3 ods2csv.py "../spreadsheets/dps.ods" PALI; 
+        [Yy]* ) python3 ods2csv.py "../spreadsheets/dps.ods" PALI; 
         
         break;;
         [Nn]* ) break;;

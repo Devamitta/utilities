@@ -27,8 +27,8 @@ python3.10 exporter.py run-generate-html-and-json
 python3.10 exporter.py run-generate-goldendict
 python3.10 exporter.py run-generate-html-and-json-sbs
 python3.10 exporter.py run-generate-goldendict-sbs
-python3.10 exporter.py run-generate-html-and-json-test
-python3.10 exporter.py run-generate-goldendict-test
+# python3.10 exporter.py run-generate-html-and-json-test
+# python3.10 exporter.py run-generate-goldendict-test
 
 
 
@@ -37,7 +37,7 @@ date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "DPS-TEST & Ru-Pāli-Dict & SBS_PD generated"
+echo "Ru-Pāli-Dict & SBS_PD generated"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "unzip and copy to GoldenDict"
