@@ -14,8 +14,8 @@ test2 = df['Fin'].str.contains('s')
 filter = test2
 df_sbs = df.loc[filter]
 
-# save csv
-df_sbs.to_csv("../csv-for-anki/sbs-pd.csv", sep="\t", index=None)
+# # save csv
+# df_sbs.to_csv("../csv-for-anki/sbs-pd.csv", sep="\t", index=None)
 
 # filter all class
 test2 = df['ex'] != ""

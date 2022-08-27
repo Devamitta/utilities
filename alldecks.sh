@@ -1,19 +1,19 @@
-cd "/home/deva/Documents/dps/scripts"
+# cd "/home/deva/Documents/dps/scripts"
 
 bash anki.sh
 
-cd "/home/deva/Documents/dps/scripts"
+# cd "/home/deva/Documents/dps/scripts"
 
 python3 "random-test.py"
 
-echo "make dps-test with random number"
+echo "dps-test.csv has been made"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
 python3 "sbs-pd-feedback.py"
 
-echo "filter SBS words from DPS"
+echo "sbs-pd-feedback.csv has been made"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
@@ -32,12 +32,15 @@ echo "add feedback to DPS"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
+python3 "sbs-pd-filter.py"
 
-cd "/home/deva/Documents/dps"
+echo "filter SBS words from DPS"
+
+cd "../inflection"
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-cd "inflection/"
+# cd "inflection/"
 python3.10 "inflection generator.py"
 
 date
@@ -65,7 +68,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
 echo "unzip and copy to GoldenDict"
-cd "/home/deva/Documents/dps/scripts"
+cd "../scripts"
 python3 "unzip-dps.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -76,7 +79,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please update Pātimokkha Word by Word.ods" 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-cd "/home/deva/Documents/sasanarakkha/patimokkha-analysis"
+cd "../patimokkha_dict"
 
 while true; do
     read -p "Pātimokkha ODS is up-to-date?" yn
@@ -87,10 +90,10 @@ while true; do
     esac
 done
 
-cp "./curated_sources/Pātimokkha for Anki.csv" "/home/deva/Documents/dps/spreadsheets/Pātimokkha for Anki.csv"
+cp 'curated_sources/Pātimokkha Word by Word.csv' ../csv-for-anki/patimokkha-anki.csv
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Pātimokkha for Anki moved for spreadsheets"
+echo "patimokkha-anki.csv moved to csv-for-anki"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
@@ -98,7 +101,11 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open Anki and import SBS-PED ; PAT ; DHP & DPS" 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-cd "/home/deva/Documents/dps/scripts"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Analisis up-to-date?"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+cd "../scripts"
 
 while true; do
     read -p "Move decks to share?" yn
@@ -113,8 +120,10 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Anki decks and csv of SBS-PED ; PAT ; DHP & DPS moved for share"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
+bash push-sbs-pd.sh
+
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Analisis up-to-date?"
+echo "DPD SBS-PD & pali-ru-dict replased on the server"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push"
@@ -132,3 +141,11 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "the job is done"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "please push test.md & ru-test.md via VSCode"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+cd /home/deva/Desktop
+
+code study-tools.code-workspace
