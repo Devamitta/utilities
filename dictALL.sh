@@ -1,4 +1,4 @@
-exec &> ~/mkall-errors.txt
+exec &> ~/.mkall-errors.txt
 
 bash anki.sh
 
@@ -47,5 +47,5 @@ python3 "unzip-dps.py"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
 
-xed ~/mkall-errors.txt
+xed ~/.mkall-errors.txt
 
