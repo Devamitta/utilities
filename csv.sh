@@ -87,6 +87,10 @@ while true; do
     esac
 done
 
+cd "/home/deva/Downloads"
+
+mv -f "dps.ods" "/home/deva/Documents/dps/spreadsheets/dps.ods"
+
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
