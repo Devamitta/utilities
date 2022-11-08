@@ -3,6 +3,23 @@ cd "/home/deva/Downloads"
 mv -f "dps.ods" "/home/deva/Documents/dps/spreadsheets/dps.ods"
 mv -f "grammar.xlsx" "/home/deva/Documents/dps/word-frequency/pāli-course/grammar.xlsx"
 
+cd "/home/deva/Documents/dps/spreadsheets"
+
+libreoffice dps.ods
+
+cd "/home/deva/Documents/dps/word-frequency/pāli-course"
+
+libreoffice grammar.xlsx
+
+while true; do
+    read -p "DPS & grammar updated?" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        *  ) echo "only yes or no";;
+    esac
+done
+
 cd "/home/deva/Documents/dps/scripts"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -15,7 +32,7 @@ python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
-python3 anki-filter.py
+python3 random-test.py
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "DPS for Anki has been updated"

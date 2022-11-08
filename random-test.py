@@ -5,8 +5,8 @@ import markdown
 df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
-df = df.drop(['class', 'count', 'ex'], axis=1)
-print("columns 'class', 'count', 'ex' has been dropped")
+# df = df.drop(['class', 'count', 'ex'], axis=1)
+# print("columns 'class', 'count', 'ex' has been dropped")
 
 # generate random number 1-100
 ran = random.sample(range(1, 100), 1)
@@ -19,6 +19,8 @@ df.loc[filter, ['Test']] = ran
 
 # save csv
 df.to_csv("../spreadsheets/dps-test.csv", sep="\t", index=None)
+
+print(f">>>>>>>>>>>>>>>>>>>>test number : {ran} <<<<<<<<<<<<<<<<<<<<<")
 
 # make test.md
 result_markdown_1 = markdown.markdown(f"""
@@ -44,7 +46,7 @@ With every update, this number will be different.
 
 """)
 
-with open('/home/deva/Documents/sasanarakkha/study-tools/test.md', 'w') as f:
+with open('/home/deva/Documents/dps/test.md', 'w') as f:
     f.write(result_markdown_1)
 f.close()
 
@@ -72,7 +74,7 @@ result_markdown_2 = markdown.markdown(f"""
 
 """)
 
-with open('/home/deva/Documents/sasanarakkha/study-tools/ru-test.md', 'w') as f:
+with open('/home/deva/Documents/dps/ru-test.md', 'w') as f:
     f.write(result_markdown_2)
 f.close()
 

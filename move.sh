@@ -42,4 +42,9 @@ cp "Pātimokkha Word by Word.ods" "/home/deva/filesrv1/share1/Sharing between us
 
 
 
+cp -f '/home/deva/Documents/dps/test.md' "/home/deva/Documents/sasanarakkha/study-tools/test.md"
+
+cp -f '/home/deva/Documents/dps/ru-test.md' "/home/deva/Documents/sasanarakkha/study-tools/ru-test.md"
+
+
 

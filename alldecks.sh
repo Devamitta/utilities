@@ -1,8 +1,14 @@
-# cd "/home/deva/Documents/dps/scripts"
+cd "/home/deva/Documents/dps/scripts"
 
-bash anki.sh
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "making csv with bold and sorted by pāli alphabet"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-# cd "/home/deva/Documents/dps/scripts"
+python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+
+mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
 python3 "random-test.py"
 
@@ -90,7 +96,10 @@ while true; do
     esac
 done
 
-cp 'curated_sources/Pātimokkha Word by Word.csv' ../csv-for-anki/patimokkha-anki.csv
+echo "Pātimokkha generated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+cp '/home/deva/Documents/dps/patimokkha_dict/curated_sources/Pātimokkha Word by Word.csv' '/home/deva/Documents/dps/csv-for-anki/patimokkha-anki.csv'
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "patimokkha-anki.csv moved to csv-for-anki"
@@ -146,6 +155,6 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "please push test.md & ru-test.md via VSCode"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-cd /home/deva/Desktop
+cd '/home/deva/Desktop'
 
 code study-tools.code-workspace

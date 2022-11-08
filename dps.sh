@@ -6,3 +6,8 @@ mv -f "grammar.xlsx" "/home/deva/Documents/dps/word-frequency/pāli-course/gramm
 cd "/home/deva/Documents/dps/spreadsheets"
 
 libreoffice dps.ods
+
+cd "/home/deva/Documents/dps/word-frequency/pāli-course"
+
+libreoffice grammar.xlsx
+

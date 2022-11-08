@@ -1,5 +1,3 @@
-exec &> ~/.mkall-errors.txt
-
 cd "/home/deva/Documents/dps/scripts"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -11,7 +9,6 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
-
 
 # cd "/home/deva/Documents/dps/scripts"
 python3 "sbs-pd-filter.py"
@@ -57,6 +54,4 @@ python3 "unzip-dps.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
-
-xed ~/.mkall-errors.txt
 

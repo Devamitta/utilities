@@ -36,8 +36,8 @@ df.loc[filter, ['Tags']] = df['Pali chant 1'] + " " + df['Pali chant 2'] + " " +
 # sort by Index
 df = df.sort_values(by=['Index', 'Example2'])
 
-df = df.drop(['Fin', 'Stem', 'Pattern'], axis = 1)
-print("columns 'Fin', 'Stem', 'Pattern' has been dropped")
+df = df.drop(['Fin', 'Stem', 'Pattern', 'ex', 'count', 'class'], axis = 1)
+print("columns 'Fin', 'Stem', 'Pattern', 'ex', 'count', 'class' - has been dropped")
 
 # save csv
 df.to_csv("../csv-for-anki/sbs-pd-feedback.csv", sep="\t", index=None)
