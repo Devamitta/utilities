@@ -99,11 +99,7 @@ done
 echo "Pātimokkha generated"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-cp '/home/deva/Documents/dps/patimokkha_dict/curated_sources/Pātimokkha Word by Word.csv' '/home/deva/Documents/dps/csv-for-anki/patimokkha-anki.csv'
-
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "patimokkha-anki.csv moved to csv-for-anki"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# cp '/home/deva/Documents/dps/patimokkha_dict/curated_sources/Pātimokkha Word by Word.csv' '/home/deva/Documents/dps/csv-for-anki/patimokkha-anki.csv'
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -129,7 +125,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Anki decks and csv of SBS-PED ; PAT ; DHP & DPS moved for share"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-bash push-sbs-pd.sh
+bash push-all.sh
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "DPD SBS-PD & pali-ru-dict replased on the server"
