@@ -38,6 +38,13 @@ echo "add feedback to DPS"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
+python3 "sutta-pitaka-feedback.py"
+
+echo "filter sutta-pitaka words from DPS"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+
 python3 "sbs-pd-filter.py"
 
 echo "filter SBS words from DPS"
@@ -103,7 +110,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Please open Anki and import SBS-PED ; PAT ; DHP & DPS" 
+echo "Please open Anki and import SBS-PED ; PAT ; DHP; Sutta & DPS" 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

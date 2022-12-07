@@ -15,6 +15,8 @@ cp "sbs-pd-feedback.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For
 mv "sbs-pd-feedback.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.csv"
 cp "dhp_bold.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/DHP Vocab/dhp-vocab.csv"
 mv "dhp_bold.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp-vocab.csv"
+cp "sutta-pitaka.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Sutta Pitaka Vocab/sutta-pitaka-vocab.csv"
+mv "sutta-pitaka.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sutta-pitaka-vocab.csv"
 
 
 cd "/home/deva/Downloads"
@@ -27,14 +29,17 @@ cp "SBS Pāli-English Vocab.apkg" "/home/deva/filesrv1/share1/Sharing between us
 mv "SBS Pāli-English Vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pali-english-vocab.apkg"
 cp "DHP vocab.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/DHP Vocab/dhp-vocab.apkg"
 mv "DHP vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp-vocab.apkg"
+cp "Sutta Pitaka Vocab.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Sutta Pitaka Vocab/sutta-pitaka-vocab.apkg"
+mv "Sutta Pitaka Vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sutta-pitaka-vocab.apkg"
+
 # cp "Ñāṇatiloka Dictionary.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Ñāṇatiloka Dictionary/nanatiloka-dictionary.apkg"
 # mv "Ñāṇatiloka Dictionary.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/nanatiloka-dictionary.apkg"
 # cp "Sutta Q&A.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Sutta Q&A/sutta-q-a.apkg"
 # mv "Sutta Q&A.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sutta-q-a.apkg"
 
-cp "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Reading common pali phrases/reading-common-pali-phrases.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/reading-common-pali-phrases.apkg"
+# cp "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Reading common pali phrases/reading-common-pali-phrases.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/reading-common-pali-phrases.apkg"
 
-cp "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Reading common pali phrases/reading-common-pali-phrases.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/reading-common-pali-phrases.csv"
+# cp "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Reading common pali phrases/reading-common-pali-phrases.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/reading-common-pali-phrases.csv"
 
 cd "/home/deva/Documents/dps/patimokkha_dict/original_sources"
 
