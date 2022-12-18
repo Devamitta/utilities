@@ -1,3 +1,23 @@
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Please update Pātimokkha Word by Word.ods" 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+cd "/home/deva/Documents/dps/patimokkha_dict"
+
+while true; do
+    read -p "Pātimokkha ODS is up-to-date?" yn
+    case $yn in
+        [Yy]* ) bash makecsv.sh; break;;
+        [Nn]* ) exit;;
+        *  ) echo "only yes or no";;
+    esac
+done
+
+echo "Pātimokkha generated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+
 cd "/home/deva/Documents/dps/scripts"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -45,6 +65,13 @@ echo "filter sutta-pitaka words from DPS"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 
+python3 "roots-feedback.py"
+
+echo "roots"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+
 python3 "sbs-pd-filter.py"
 
 echo "filter SBS words from DPS"
@@ -88,29 +115,12 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
 
 
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Please update Pātimokkha Word by Word.ods" 
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-
-cd "../patimokkha_dict"
-
-while true; do
-    read -p "Pātimokkha ODS is up-to-date?" yn
-    case $yn in
-        [Yy]* ) bash makecsv.sh; break;;
-        [Nn]* ) exit;;
-        *  ) echo "only yes or no";;
-    esac
-done
-
-echo "Pātimokkha generated"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 # cp '/home/deva/Documents/dps/patimokkha_dict/curated_sources/Pātimokkha Word by Word.csv' '/home/deva/Documents/dps/csv-for-anki/patimokkha-anki.csv'
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Please open Anki and import SBS-PED ; PAT ; DHP; Sutta & DPS" 
+echo "Please open Anki and import SBS-PED ; PAT ; DHP; Sutta & DPS & Roots" 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -161,3 +171,14 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd '/home/deva/Desktop'
 
 code study-tools.code-workspace
+
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "please change all artifacts in dps via VSCode"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+code dps.code-workspace
+
+cd "/home/deva/Documents/dps/scripts"
+
+google-chrome study-tools-releases.html

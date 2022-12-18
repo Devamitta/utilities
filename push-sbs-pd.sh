@@ -6,6 +6,6 @@ cp -f "/home/deva/Documents/dps/exporter/share/sbs-pd.zip" "/home/deva/Documents
 
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-08.11.2022_14-30-08' temp-push/sbs-pd.zip
+gh release upload --clobber 'artifacts-15.12.2022_10-34-00' temp-push/sbs-pd.zip
 
 echo sbs-pd uploaded

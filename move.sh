@@ -8,7 +8,7 @@ cp "ru-pali-dictionary.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-
 cd "/home/deva/Documents/dps/csv-for-anki"
 
 cp "patimokkha-anki.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Pātimokkha Word By Word/patimokkha-word-by-word.csv"
-mv "patimokkha-anki.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/patimokkha-word-by-word.csv"
+cp "patimokkha-anki.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/patimokkha-word-by-word.csv"
 cp "dps-feedback.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)//Пали Словарь Анки/ru-pali-vocab.csv"
 mv "dps-feedback.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-vocab.csv" 
 cp "sbs-pd-feedback.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/SBS Pāli-English Vocab/sbs-pd.csv"
@@ -17,6 +17,8 @@ cp "dhp_bold.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyo
 mv "dhp_bold.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp-vocab.csv"
 cp "sutta-pitaka.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Sutta Pitaka Vocab/sutta-pitaka-vocab.csv"
 mv "sutta-pitaka.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sutta-pitaka-vocab.csv"
+cp "roots.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Roots/roots.csv"
+mv "roots.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/roots.csv"
 
 
 cd "/home/deva/Downloads"
@@ -31,6 +33,8 @@ cp "DHP vocab.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Ever
 mv "DHP vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp-vocab.apkg"
 cp "Sutta Pitaka Vocab.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Sutta Pitaka Vocab/sutta-pitaka-vocab.apkg"
 mv "Sutta Pitaka Vocab.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sutta-pitaka-vocab.apkg"
+cp "Roots.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Roots/roots.apkg"
+mv "Roots.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/roots.apkg"
 
 # cp "Ñāṇatiloka Dictionary.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Ñāṇatiloka Dictionary/nanatiloka-dictionary.apkg"
 # mv "Ñāṇatiloka Dictionary.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/nanatiloka-dictionary.apkg"

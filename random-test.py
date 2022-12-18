@@ -5,6 +5,9 @@ import markdown
 df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
+df_pat = pd.read_csv("../csv-for-anki/patimokkha-anki.csv", sep="\t", dtype= str)
+df.fillna("", inplace=True)
+
 # df = df.drop(['class', 'count', 'ex'], axis=1)
 # print("columns 'class', 'count', 'ex' has been dropped")
 
@@ -12,13 +15,21 @@ df.fillna("", inplace=True)
 ran = random.sample(range(1, 100), 1)
 ran = str(ran[0])
 
-# change Test
+# change Test dps
 test1 = df['Pāli1'] != ""
 filter = test1
 df.loc[filter, ['Test']] = ran
 
-# save csv
+# change Test pat
+test2 = df_pat['pali'] != ""
+filter = test2
+df_pat.loc[filter, ['test number']] = ran
+
+# save csv dps
 df.to_csv("../spreadsheets/dps-test.csv", sep="\t", index=None)
+
+# save csv pat
+df_pat.to_csv("../csv-for-anki/patimokkha-anki.csv", sep="\t", index=None)
 
 print(f">>>>>>>>>>>>>>>>>>>>test number : {ran} <<<<<<<<<<<<<<<<<<<<<")
 
