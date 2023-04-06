@@ -1,11 +1,13 @@
-
+echo "copy sbs-pd"
 
 cp -rf ~/Documents/GoldenDict/sbs-pd ~/filesrv1/share1/Sharing\ between\ users/1\ For\ Everyone/Software/Golden\ Dictionary/Default/
 
 cp -f "/home/deva/Documents/dps/exporter/share/sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.zip"
 
+echo "sbs-pd in the server"
+
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-15.12.2022_10-34-00' temp-push/sbs-pd.zip
+gh release upload --clobber 'artifacts-07.02.2023_12-59-44' temp-push/sbs-pd.zip
 
-echo sbs-pd uploaded
+echo "sbs-pd uploaded on GitHub"

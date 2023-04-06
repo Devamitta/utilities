@@ -1,7 +1,7 @@
 
 import pandas as pd
 
-df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
+df = pd.read_csv("../spreadsheets/dps-dpd-ex.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # change Meaning in native language

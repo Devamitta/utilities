@@ -78,9 +78,12 @@ echo "filter SBS words from DPS"
 
 cd "../inflection"
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+python3.10 "inflection generator.py"
+
+cd "../inflection-en"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# cd "inflection/"
 python3.10 "inflection generator.py"
 
 date
@@ -93,6 +96,8 @@ python3.10 exporter.py run-generate-html-and-json
 python3.10 exporter.py run-generate-goldendict
 python3.10 exporter.py run-generate-html-and-json-sbs
 python3.10 exporter.py run-generate-goldendict-sbs
+python3.10 exporter.py run-generate-html-and-json-dps-en
+python3.10 exporter.py run-generate-goldendict-dps-en
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

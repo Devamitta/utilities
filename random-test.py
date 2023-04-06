@@ -8,8 +8,8 @@ df.fillna("", inplace=True)
 df_pat = pd.read_csv("../csv-for-anki/patimokkha-anki.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
-# df = df.drop(['class', 'count', 'ex'], axis=1)
-# print("columns 'class', 'count', 'ex' has been dropped")
+# df = df.drop(['ID'], axis=1)
+# print("column 'ID' has been dropped")
 
 # generate random number 1-100
 ran = random.sample(range(1, 100), 1)

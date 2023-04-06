@@ -12,6 +12,14 @@ python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
+python3 DPD-ex-insert.py
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "dps-dpd-ex.csv has been updated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
 
 # cd "/home/deva/Documents/dps/scripts"
 python3 "sbs-pd-filter.py"
@@ -24,9 +32,12 @@ date
 
 cd "../inflection"
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+python3.10 "inflection generator.py"
+
+cd "../inflection-en"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# cd "inflection/"
 python3.10 "inflection generator.py"
 
 date

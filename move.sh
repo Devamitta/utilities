@@ -4,6 +4,7 @@ cp -f "/home/deva/Documents/Docs/SBS/analysis-of-sbs-pāli-english-recitations.p
 cd "/home/deva/Documents/dps/exporter/share"
 cp "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.zip"
 cp "ru-pali-dictionary.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-dict.zip"
+cp "dps.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dps.zip"
 
 cd "/home/deva/Documents/dps/csv-for-anki"
 

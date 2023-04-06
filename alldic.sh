@@ -1,30 +1,42 @@
 cd "/home/deva/Documents/dps/scripts"
 
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# date
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# echo "making csv with bold and sorted by pāli alphabet"
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "making csv with bold and sorted by pāli alphabet"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-# python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
-# mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
+mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
-# # cd "/home/deva/Documents/dps/scripts"
-# python3 "sbs-pd-filter.py"
-
-# echo "filter SBS words from DPS"
-
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# date
-
-
-cd "../inflection"
-
+python3 DPD-ex-insert.py
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# cd "inflection/"
-python3.10 "inflection generator.py"
+echo "dps-dpd-ex.csv has been updated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+
+# cd "/home/deva/Documents/dps/scripts"
+python3 "sbs-pd-filter.py"
+
+echo "filter SBS words from DPS"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+
+
+# cd "../inflection"
+
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# python3.10 "inflection generator.py"
+
+# cd "../inflection-en"
+
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# python3.10 "inflection generator.py"
 
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

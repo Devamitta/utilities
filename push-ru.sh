@@ -1,19 +1,27 @@
+echo "copy ru-dict"
+
 cp -rf ~/Documents/GoldenDict/ru-pali-dictionary ~/filesrv1/share1/Sharing\ between\ users/1\ For\ Everyone/Software/Golden\ Dictionary/Optional/
 
 cp -f "/home/deva/Documents/dps/exporter/share/ru-pali-dictionary.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-dict.zip"
 
+echo "ru-dict in the server"
+
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-15.12.2022_10-34-00' temp-push/ru-pali-dict.zip
+gh release upload --clobber 'artifacts-07.02.2023_12-59-44' temp-push/ru-pali-dict.zip
 
-echo ru-dict uploaded
+echo "ru-dict uploaded on GitHub"
+
+echo "copy dps"
 
 cp -rf ~/Documents/GoldenDict/dps ~/filesrv1/share1/Sharing\ between\ users/1\ For\ Everyone/Software/Golden\ Dictionary/Optional/
 
 cp -f "/home/deva/Documents/dps/exporter/share/dps.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dps.zip"
 
-cd "/home/deva/Documents/sasanarakkha/study-tools"
+# echo "dps in the server"
 
-gh release upload --clobber 'artifacts-15.12.2022_10-34-00' temp-push/dps.zip
+# cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-echo dps uploaded
+# gh release upload --clobber 'artifacts-07.02.2023_12-59-44' temp-push/dps.zip
+
+# echo "dps uploaded on GitHub"
