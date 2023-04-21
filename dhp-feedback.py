@@ -49,6 +49,15 @@ df_DHP3 = df.loc[filter]
 # df_DHP2["Sutta3"] = ""
 # df_DHP2["Example3"] = ""
 
+# filter all DHP from Source4
+test2 = ~df['Source1'].str.contains('DHP')
+test3 = ~df['Source2'].str.contains('DHP')
+test4 = ~df['Source3'].str.contains('DHP')
+test5 = df['Source4'].str.contains('DHP')
+test6 = df['Sutta4'].str.contains('vaggo')
+filter = test2 & test3 & test4 & test5 & test6
+df_DHP4 = df.loc[filter]
+
 
 
 # if headword from df2 is in df1, then delete whole row from df2
@@ -57,7 +66,7 @@ df_DHP3 = df.loc[filter]
 
 # df_DHP4 = df_DHP2.drop(df_DHP2[logix].index)
 
-df_combined = pd.concat([df_DHP1, df_DHP2, df_DHP3])
+df_combined = pd.concat([df_DHP1, df_DHP2, df_DHP3, df_DHP4])
 
 # df_combined = df_DHP1.append(df_DHP4)
 
@@ -78,8 +87,8 @@ df_combined.sort_values(["Source1"], ascending=True, inplace=True)
 df_combined.reset_index(drop=True, inplace=True)
 df_combined['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500=""" + df_combined.Pāli1 + """&entry.1433863141=DHP">Fix it here</a>."""
 
-df_combined = df_combined.drop(['Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Index', 'ex', 'count', 'class'], axis = 1)
-print("columns 'Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Index', 'ex', 'count', 'class' has been dropped")
+df_combined = df_combined.drop(['Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Pali chant 4', 'English chant 4', 'Chapter 4', 'Index', 'ex', 'count', 'class', 'DPD', 'Pāli-old', 'eng-old', 'move', 'sync', 'no. for class filter', 'Notes SBS', 'Notes RU'], axis = 1)
+print("columns 'Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Index', 'ex', 'count', 'class', 'DPD', 'Pāli-old', 'eng-old', 'move', 'sync', 'no. for class filter', 'Notes SBS', 'Notes RU' has been dropped")
 
 
 # save csv

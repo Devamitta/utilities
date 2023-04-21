@@ -32,8 +32,8 @@ df_change = df.loc[filter]
 
 df_combined = pd.concat([df_roots, df_change])
 
-df_combined = df_combined.drop(['Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Pali chant 4', 'English chant 4', 'Chapter 4', 'Index', 'count', 'class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync'], axis = 1)
-print("columns 'Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Pali chant 4', 'English chant 4', 'Chapter 4', 'Index', 'count', 'class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync' has been dropped for class root csv")
+df_combined = df_combined.drop(['Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Pali chant 4', 'English chant 4', 'Chapter 4', 'Index', 'count', 'class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync', 'no. for class filter', 'Notes SBS', 'Notes RU'], axis = 1)
+print("columns 'Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Pali chant 4', 'English chant 4', 'Chapter 4', 'Index', 'count', 'class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync', 'no. for class filter', 'Notes SBS', 'Notes RU' has been dropped for class root csv")
 
 
 # save csv
