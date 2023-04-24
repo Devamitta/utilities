@@ -47,8 +47,8 @@ python3 exporter.py run-generate-html-and-json
 python3 exporter.py run-generate-goldendict
 python3 exporter.py run-generate-html-and-json-sbs
 python3 exporter.py run-generate-goldendict-sbs
-python3 exporter.py run-generate-html-and-json-dps-en
-python3 exporter.py run-generate-goldendict-dps-en
+# python3 exporter.py run-generate-html-and-json-dps-en
+# python3 exporter.py run-generate-goldendict-dps-en
 
 
 

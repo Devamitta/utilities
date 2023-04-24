@@ -15,7 +15,7 @@ df_dps["Test-s"] = df_dps["Test"]
 
 # choosing order of columns
 
-df_dps = df_dps[['ID', 'Meaning in native language', 'Fin-s', 'Test-s', 'ex']]
+df_dps = df_dps[['id', 'ru_meaning', 'Fin-s', 'Test-s', 'sbs_class_anki']]
 
 # df_dps_merged = pd.merge(df_dps, df_nid, how='left')
 df_dps_merged = pd.merge(df_nid, df_dps, how='left')

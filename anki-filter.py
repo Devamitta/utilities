@@ -4,14 +4,14 @@ import pandas as pd
 df = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
-df_anki = df.drop(['class', 'count'], axis=1)
+df_anki = df.drop(['sbs_class', 'count'], axis=1)
 
-print("columns 'class', 'count' has been dropped")
+print("columns 'sbs_class', 'count' has been dropped")
 
-# # change Meaning in native language
-# test1 = df['Pāli1'] != ""
+# # change ru_meaning
+# test1 = df['pali_1'] != ""
 # filter = test1
-# df.loc[filter, ['Meaning in native language']] = ""
+# df.loc[filter, ['ru_meaning']] = ""
 
 # # filter all SBS words
 # test2 = df['Fin'].str.contains('s')

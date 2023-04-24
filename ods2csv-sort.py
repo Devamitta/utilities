@@ -39,8 +39,8 @@ class ReadOds:
         print(f"saving csvs")
         for sheet_name in self.df:
             
-            self.df[sheet_name].sort_values(by = ['Pāli1'], ignore_index=True, inplace=True, key=lambda x: x.map(sort_key))
-            filter = self.df[sheet_name]['Pāli1'] != ""
+            self.df[sheet_name].sort_values(by = ['pali_1'], ignore_index=True, inplace=True, key=lambda x: x.map(sort_key))
+            filter = self.df[sheet_name]['pali_1'] != ""
             self.df[sheet_name] = self.df[sheet_name][filter]
 
             rows = self.df[sheet_name].shape[0]

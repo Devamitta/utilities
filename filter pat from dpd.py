@@ -15,14 +15,14 @@ df = df.loc[filter]
 
 
 # replace all sutta numbers with '_'
-# df['Source1'] = df['Source1'].str.replace(' ', '_')
-# df['Source2'] = df['Source2'].str.replace(' ', '_')
-# df['Source3'] = df['Source3'].str.replace(' ', '_')
+# df['source_1'] = df['source_1'].str.replace(' ', '_')
+# df['source_2'] = df['source_2'].str.replace(' ', '_')
+# df['sbs_source_3'] = df['sbs_source_3'].str.replace(' ', '_')
 
 # filter all from sutta1
 test1 = df["Fin"] != ""
-test2 = df['Source1'].str.contains('PAT')
-# test3 = df['Sutta1'].str.contains('sutta')
+test2 = df['source_1'].str.contains('PAT')
+# test3 = df['sutta_1'].str.contains('sutta')
 filter = test1 & test2
 df_sutta1 = df.loc[filter]
 
@@ -33,8 +33,8 @@ df_sutta1 = df.loc[filter]
 
 # filter all from sutta1
 test1 = df["Fin"] != ""
-test3 = df['Source 2'].str.contains('PAT')
-# test3 = df['Sutta1'].str.contains('sutta')
+test3 = df['source_2'].str.contains('PAT')
+# test3 = df['sutta_1'].str.contains('sutta')
 filter = test1 & test3
 df_sutta2 = df.loc[filter]
 
@@ -44,35 +44,35 @@ df_sutta2 = df.loc[filter]
 
 
 # # move examples from 2 to 1
-# df_sutta2["Source1"] = df_sutta2["Source2"]
-# df_sutta2["Sutta1"] = df_sutta2["Sutta2"]
-# df_sutta2["Example1"] = df_sutta2["Example2"]
+# df_sutta2["source_1"] = df_sutta2["source_2"]
+# df_sutta2["sutta_1"] = df_sutta2["sutta_2"]
+# df_sutta2["example_1"] = df_sutta2["example_2"]
 
-# df_sutta2["Source2"] = ""
-# df_sutta2["Sutta2"] = ""
-# df_sutta2["Example2"] = ""
+# df_sutta2["source_2"] = ""
+# df_sutta2["sutta_2"] = ""
+# df_sutta2["example_2"] = ""
 
 
 # # move examples from 3 to 1
-# df_sutta3["Source1"] = df_sutta3["Source3"]
-# df_sutta3["Sutta1"] = df_sutta3["Sutta3"]
-# df_sutta3["Example1"] = df_sutta3["Example3"]
+# df_sutta3["source_1"] = df_sutta3["sbs_source_3"]
+# df_sutta3["sutta_1"] = df_sutta3["sbs_sutta_3"]
+# df_sutta3["example_1"] = df_sutta3["sbs_example_3"]
 
-# df_sutta2["Source3"] = ""
-# df_sutta2["Sutta3"] = ""
-# df_sutta2["Example3"] = ""
+# df_sutta2["sbs_source_3"] = ""
+# df_sutta2["sbs_sutta_3"] = ""
+# df_sutta2["sbs_example_3"] = ""
 
 
 
 # if headword from df_sutta2 is in df_sutta1, then delete whole row from df_sutta2
 
-# logix = df_sutta2['Pāli1'].isin(df_sutta1['Pāli1'])
+# logix = df_sutta2['pali_1'].isin(df_sutta1['pali_1'])
 
 # df_sutta4 = df_sutta2.drop(df_sutta2[logix].index)
 
 # if headword from df is in df_sutta1, then delete whole row from df
 
-logix = df['Pāli1'].isin(df_sutta1['Pāli1'])
+logix = df['pali_1'].isin(df_sutta1['pali_1'])
 
 df = df.drop(df[logix].index)
 
@@ -81,7 +81,7 @@ df = df.drop(df[logix].index)
 
 # if headword from df is in df_sutta2, then delete whole row from df
 
-logix = df['Pāli1'].isin(df_sutta2['Pāli1'])
+logix = df['pali_1'].isin(df_sutta2['pali_1'])
 
 df = df.drop(df[logix].index)
 
@@ -93,25 +93,25 @@ df.to_csv("../spreadsheets/df_without_2.csv", sep="\t", index=None)
 
 # df_combined = df_sutta1.append(df_sutta4)
 
-# df_combined.sort_values(["Source1"], ascending=True, inplace=True)
+# df_combined.sort_values(["source_1"], ascending=True, inplace=True)
 
 # choosing order of columns
 
-# df_combined = df_combined[['Pāli1', 'POS', 'Grammar', 'Derived from', 'Neg', 
-#        'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Meaning in native language', 'Pāli Root', 'Base',  
-#        'Construction', 'Sanskrit', 'Sk Root', 
-#        'Variant', 'Commentary', 'Notes', 
-#        'Source1', 'Sutta1', 'Example1', 'Source2', 'Sutta2', 'Example2', 'Test']]
+# df_combined = df_combined[['pali_1', 'pos', 'grammar', 'derived_from', 'neg', 
+#        'verb', 'trans', 'plus_case', 'meaning_1', 'ru_meaning', 'root_pali', 'root_base',  
+#        'construction', 'sanskrit', 'root_sk', 
+#        'variant', 'commentary', 'notes', 
+#        'source_1', 'sutta_1', 'example_1', 'source_2', 'sutta_2', 'example_2', 'Test']]
 
 # make Feedback
-# df_combined.insert(39, 'Feedback', "<a href=\"https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500="+df['Pāli1']+"\">feedback</a>")
+# df_combined.insert(39, 'Feedback', "<a href=\"https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500="+df['pali_1']+"\">feedback</a>")
 
 # adding feedback
 # df_combined.reset_index(drop=True, inplace=True)
-# df_combined['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500=""" + df_combined.Pāli1 + """&entry.1433863141=SuttaPitaka">Fix it here</a>."""
+# df_combined['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500=""" + df_combined.pali_1 + """&entry.1433863141=SuttaPitaka">Fix it here</a>."""
 
-# df_combined = df_combined.drop(['Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Index', 'ex', 'count', 'class'], axis = 1)
-# print("columns 'Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Index', 'ex', 'count', 'class' has been dropped")
+# df_combined = df_combined.drop(['Fin', 'stem', 'pattern', 'sbs_meaning', 'sbs_chant_pali_1', 'sbs_chant_eng_1', 'sbs_chapter_1', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3', 'sbs_index', 'sbs_class_anki', 'count', 'sbs_class'], axis = 1)
+# print("columns 'Fin', 'stem', 'pattern', 'sbs_meaning', 'sbs_chant_pali_1', 'sbs_chant_eng_1', 'sbs_chapter_1', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3', 'sbs_index', 'sbs_class_anki', 'count', 'sbs_class' has been dropped")
 
 
 # save csv

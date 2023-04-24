@@ -8,15 +8,17 @@ df.fillna("", inplace=True)
 df_pat = pd.read_csv("../csv-for-anki/patimokkha-anki.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
-# df = df.drop(['ID'], axis=1)
-# print("column 'ID' has been dropped")
+# df = df.drop(['id'], axis=1)
+# print("column 'id' has been dropped")
 
 # generate random number 1-100
 ran = random.sample(range(1, 100), 1)
 ran = str(ran[0])
 
+df["Test"] = ""
+
 # change Test dps
-test1 = df['Pāli1'] != ""
+test1 = df['pali_1'] != ""
 filter = test1
 df.loc[filter, ['Test']] = ran
 

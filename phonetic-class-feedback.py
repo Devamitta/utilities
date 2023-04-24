@@ -7,33 +7,33 @@ df.fillna("", inplace=True)
 
 # adding feedback
 # df_roots.reset_index(drop=True, inplace=True)
-df['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500=""" + df.Pāli1 + """&entry.1433863141=Phonetic">Fix it here</a>."""
+df['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScNC5v2gQbBCM3giXfYIib9zrp-WMzwJuf_iVXEMX2re4BFFw/viewform?usp=pp_url&entry.438735500=""" + df.pali_1 + """&entry.1433863141=Phonetic">Fix it here</a>."""
 
-# change Meaning in native language
-test1 = df['Pāli1'] != ""
+# change ru_meaning
+test1 = df['pali_1'] != ""
 filter = test1
-df.loc[filter, ['Meaning in native language']] = ""
+df.loc[filter, ['ru_meaning']] = ""
 
 # filter all words from class
-test1 = df['ex'] != "" 
+test1 = df['sbs_class_anki'] != "" 
 filter = test1
 df = df.loc[filter]
 
 # filter all words only roots
-# test2 = df['Pāli Root'] != "" 
-# test3 = df['Phonetic Changes'] == "" 
+# test2 = df['root_pali'] != "" 
+# test3 = df['phonetic'] == "" 
 # filter = test2 & test3
 # df_roots = df.loc[filter]
 
 # filter all words only change
-test4 = df['Phonetic Changes'] != "" 
+test4 = df['phonetic'] != "" 
 filter = test4
 df_change = df.loc[filter]
 
 # df_combined = pd.concat([df_roots, df_change])
 
-df_change = df_change.drop(['Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Pali chant 4', 'English chant 4', 'Chapter 4', 'Index', 'count', 'class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync', 'no. for class filter', 'Notes SBS', 'Notes RU'], axis = 1)
-print("columns 'Fin', 'Stem', 'Pattern', 'Meaning in SBS-PER', 'Pali chant 1', 'English chant 1', 'Chapter 1', 'Pali chant 2', 'English chant 2', 'Chapter 2', 'Pali chant 3', 'English chant 3', 'Chapter 3', 'Pali chant 4', 'English chant 4', 'Chapter 4', 'Index', 'count', 'class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync', 'no. for class filter', 'Notes SBS', 'Notes RU' has been dropped for class root csv")
+df_change = df_change.drop(['Fin', 'stem', 'pattern', 'sbs_meaning', 'sbs_chant_pali_1', 'sbs_chant_eng_1', 'sbs_chapter_1', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4', 'sbs_index', 'count', 'sbs_class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync', 'no. for class filter', 'sbs_notes', 'ru_notes'], axis = 1)
+print("columns 'Fin', 'stem', 'pattern', 'sbs_meaning', 'sbs_chant_pali_1', 'sbs_chant_eng_1', 'sbs_chapter_1', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4', 'sbs_index', 'count', 'sbs_class', 'Pāli-old', 'eng-old', 'DPD', 'move', 'sync', 'no. for class filter', 'sbs_notes', 'ru_notes' has been dropped for class root csv")
 
 
 # save csv

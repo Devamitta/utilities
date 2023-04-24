@@ -40,6 +40,9 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
+cp "/home/deva/Documents/dpd-br/dpd-db/backups/PaliWord.tsv" "/home/deva/Documents/dpd-br/csvs/dpd-full.csv"
+
+
 python3 DPD-ex-insert.py
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -60,7 +63,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 python3 phonetic-class-feedback.py
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "csv for Phonetic Changes Class has been updated"
+echo "csv for phonetic Class has been updated"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

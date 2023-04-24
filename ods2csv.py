@@ -39,8 +39,8 @@ class ReadOds:
         for sheet_name in self.df:
             
             # if sheet_name == "PALI":
-            #     # self.df[sheet_name].sort_values(by = ['Pāli1'], ignore_index=True, inplace=True)
-            #     filter = self.df[sheet_name]['Pāli1'] != ""
+            #     # self.df[sheet_name].sort_values(by = ['pali_1'], ignore_index=True, inplace=True)
+            #     filter = self.df[sheet_name]['pali_1'] != ""
             #     self.df[sheet_name] = self.df[sheet_name][filter]
             
             # if sheet_name == "Roots":
