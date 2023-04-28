@@ -4,7 +4,7 @@ mv -f "dpd.ods" "/home/deva/Documents/dpd-br/dpd.ods"
 
 cd "/home/deva/Documents/dpd-br"
 
-python3.10 "utilities/ods2csv.py"
+python3 "utilities/ods2csv.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "dpd-pali.csv updated"

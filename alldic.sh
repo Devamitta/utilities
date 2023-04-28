@@ -1,14 +1,14 @@
 cd "/home/deva/Documents/dps/scripts"
 
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# date
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# echo "making csv with bold and sorted by pāli alphabet"
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "making csv with bold and sorted by pāli alphabet"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-# python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
-# mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
+mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
 # python3 DPD-ex-insert.py
 
@@ -19,30 +19,39 @@ cd "/home/deva/Documents/dps/scripts"
 # echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
-# # cd "/home/deva/Documents/dps/scripts"
-# python3 "sbs-pd-filter.py"
+# cd "/home/deva/Documents/dps/scripts"
+python3 "sbs-pd-filter.py"
 
-# echo "filter SBS words from DPS"
+echo "filter SBS words from DPS"
 
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# date
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+date
 
 
-# cd "../inflection"
+cd "../inflection"
 
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# python3 "inflection generator.py"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+python3 "inflection generator.py"
 
-# cd "../inflection-en"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "inflection generated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-# python3 "inflection generator.py"
+cd "../inflection-en"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+python3 "inflection generator.py"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "inflection-en generated"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "../exporter"
 # source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.10/bin/activate
 # poetry shell
+# source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.11/bin/activate
 python3 exporter.py run-generate-html-and-json
 python3 exporter.py run-generate-goldendict
 python3 exporter.py run-generate-html-and-json-sbs

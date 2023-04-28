@@ -15,12 +15,30 @@ df.fillna("", inplace=True)
 ran = random.sample(range(1, 100), 1)
 ran = str(ran[0])
 
-df["Test"] = ""
-
 # change Test dps
 test1 = df['pali_1'] != ""
 filter = test1
-df.loc[filter, ['Test']] = ran
+df.loc[filter, ['sbs_category']] = ran
+
+# concat English Meaning
+test1 = df['pali_1'] != ""
+test2 = df['meaning_lit'] != ""
+filter = test1 & test2
+df.loc[filter, ['meaning_1']] = df['meaning_1'] + "; lit. " + df['meaning_lit']
+
+df = df.drop(['meaning_lit'], axis=1)
+
+print("column 'meaning_lit' has been dropped")
+
+# concat Ru Meaning
+test1 = df['pali_1'] != ""
+test2 = df['ru_meaning_lit'] != ""
+filter = test1 & test2
+df.loc[filter, ['ru_meaning']] = df['ru_meaning'] + "; досл. " + df['ru_meaning_lit']
+
+df = df.drop(['ru_meaning_lit'], axis=1)
+
+print("column 'ru_meaning_lit' has been dropped")
 
 # change Test pat
 test2 = df_pat['pali'] != ""

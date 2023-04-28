@@ -26,6 +26,7 @@ df_dpd["DPD_source_2"] = df_dpd["source_2"]
 df_dpd["DPD_sutta_2"] = df_dpd["sutta_2"]
 df_dpd["DPD_example_2"] = df_dpd["example_2"]
 
+df_dpd["DPD_pos"] = df_dpd['pos']
 df_dpd["DPD_grammar"] = df_dpd['grammar']
 # df_dpd["DPD_derived_from"] = df_dpd['derived_from']
 # df_dpd["DPD_neg"] = df_dpd['neg']
@@ -41,8 +42,10 @@ df_dpd["DPD_sanskrit"] = df_dpd["sanskrit"]
 df_dpd["DPD_variant"] = df_dpd["variant"]
 df_dpd["DPD_commentary"] = df_dpd["commentary"]
 df_dpd["DPD_notes"] = df_dpd["notes"]
+df_dpd["DPD_stem"] = df_dpd["stem"]
+df_dpd["DPD_pattern"] = df_dpd["pattern"]
 
-df_dpd = df_dpd[['id', 'DPD_grammar', 'DPD_plus_case', 'DPD_meaning_1', 'DPD_meaning_lit', 'DPD_root_pali', 'DPD_root_base', 'DPD_construction', 'DPD_sanskrit', 'DPD_variant', 'DPD_commentary', 'DPD_notes', 'DPD_source_1', 'DPD_sutta_1', 'DPD_example_1', 'DPD_source_2', 'DPD_sutta_2', 'DPD_example_2']]
+df_dpd = df_dpd[['id', 'DPD_pos', 'DPD_grammar', 'DPD_plus_case', 'DPD_meaning_1', 'DPD_meaning_lit', 'DPD_root_pali', 'DPD_root_base', 'DPD_construction', 'DPD_sanskrit', 'DPD_variant', 'DPD_commentary', 'DPD_notes', 'DPD_source_1', 'DPD_sutta_1', 'DPD_example_1', 'DPD_source_2', 'DPD_sutta_2', 'DPD_example_2', 'DPD_stem', 'DPD_pattern']]
 
 df_dps = pd.read_csv("../spreadsheets/dps-full.csv", sep="\t", dtype= str)
 df_dps.fillna("")

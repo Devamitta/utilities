@@ -12,13 +12,13 @@ python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
-python3 DPD-ex-insert.py
+# python3 DPD-ex-insert.py
 
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "dps-dpd-ex.csv has been updated"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-date
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# echo "dps-dpd-ex.csv has been updated"
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# date
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
 # cd "/home/deva/Documents/dps/scripts"
@@ -33,24 +33,24 @@ date
 cd "../inflection"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-python3.10 "inflection generator.py"
+python3 "inflection generator.py"
 
 cd "../inflection-en"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-python3.10 "inflection generator.py"
+python3 "inflection generator.py"
 
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "../exporter"
 # source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.10/bin/activate
 # poetry shell
-python3.10 exporter.py run-generate-html-and-json
-python3.10 exporter.py run-generate-goldendict
-python3.10 exporter.py run-generate-html-and-json-sbs
-python3.10 exporter.py run-generate-goldendict-sbs
-# python3.10 exporter.py run-generate-html-and-json-dps-en
-# python3.10 exporter.py run-generate-goldendict-dps-en
+python3 exporter.py run-generate-html-and-json
+python3 exporter.py run-generate-goldendict
+python3 exporter.py run-generate-html-and-json-sbs
+python3 exporter.py run-generate-goldendict-sbs
+# python3 exporter.py run-generate-html-and-json-dps-en
+# python3 exporter.py run-generate-goldendict-dps-en
 
 
 

@@ -19,9 +19,9 @@ filter = test1 & test2
 df.loc[filter, ['root_pali']] = df['Root Clean'] + " " + df['Grp'] + " " + df['Sgn'] + " " + "(" + "to " + df['Root Meaning'] + ")"
 
 # concat English Meaning
-test3 = df['Literal Meaning'] != ""
+test3 = df['meaning_lit'] != ""
 filter = test3 & test2
-df.loc[filter, ['meaning_1']] = df['meaning_1'] + "; lit. " + df['Literal Meaning']
+df.loc[filter, ['meaning_1']] = df['meaning_1'] + "; lit. " + df['meaning_lit']
 
 # concat Notes and phonetic
 # test4 = df['phonetic'] != ""

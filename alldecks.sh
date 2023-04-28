@@ -79,12 +79,12 @@ echo "filter SBS words from DPS"
 cd "../inflection"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-python3.10 "inflection generator.py"
+python3 "inflection generator.py"
 
 cd "../inflection-en"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-python3.10 "inflection generator.py"
+python3 "inflection generator.py"
 
 date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -92,12 +92,12 @@ cd "../exporter"
 
 # source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.10/bin/activate
 # poetry shell
-python3.10 exporter.py run-generate-html-and-json
-python3.10 exporter.py run-generate-goldendict
-python3.10 exporter.py run-generate-html-and-json-sbs
-python3.10 exporter.py run-generate-goldendict-sbs
-# python3.10 exporter.py run-generate-html-and-json-dps-en
-# python3.10 exporter.py run-generate-goldendict-dps-en
+python3 exporter.py run-generate-html-and-json
+python3 exporter.py run-generate-goldendict
+python3 exporter.py run-generate-html-and-json-sbs
+python3 exporter.py run-generate-goldendict-sbs
+# python3 exporter.py run-generate-html-and-json-dps-en
+# python3 exporter.py run-generate-goldendict-dps-en
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

@@ -48,7 +48,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 while true; do
     read -p "friquent-words need update?" yn
     case $yn in
-        [Yy]* ) python3 ods2csv.py "../word-frequency/pāli-course/frequent-words.ods" words; break;;
+        [Yy]* ) python3 ods2csv.py "../pāli-course/frequent-words.ods" words; break;;
         [Nn]* ) break;;
         *  ) echo "only yes or no";;
     esac
