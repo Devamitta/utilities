@@ -4,7 +4,7 @@ cp -rf ~/Documents/GoldenDict/sbs-pd ~/filesrv1/share1/Sharing\ between\ users/1
 
 cp -f "/home/deva/Documents/dps/exporter/share/sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.zip"
 
-echo "sbs-pd in the server"
+echo "sbs-pd moved on the server"
 
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
