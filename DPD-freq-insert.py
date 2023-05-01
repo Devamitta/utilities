@@ -32,10 +32,3 @@ df_merged = df_merged.drop(['pali_1-copy'], axis=1)
 
 df_merged.to_csv("/home/deva/Documents/dps/spreadsheets/dpd-freq.csv", sep="\t", index=None)
 
-
-
-# df_dpd = df_dpd[['id', 'DPD_pos', 'DPD_grammar', 'DPD_plus_case', 'DPD_meaning_1', 'DPD_meaning_lit', 'DPD_root_pali', 'DPD_root_base', 'DPD_construction', 'DPD_sanskrit', 'DPD_variant', 'DPD_commentary', 'DPD_notes', 'DPD_source_1', 'DPD_sutta_1', 'DPD_example_1', 'DPD_source_2', 'DPD_sutta_2', 'DPD_example_2', 'DPD_stem', 'DPD_pattern']]
-
-
-# df_dps = df_dps.drop(['DPD'], axis = 1)
-
