@@ -32,6 +32,8 @@ python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
+cp "../spreadsheets/dps-full.csv" "/home/deva/Documents/dpd-br/dpd-db/csvs/dps.csv"
+
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 python3 random-test.py
@@ -43,7 +45,6 @@ date
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 cp "/home/deva/Documents/dpd-br/dpd-db/backups/PaliWord.tsv" "/home/deva/Documents/dpd-br/csvs/dpd-full.csv"
-
 
 python3 DPD-ex-insert.py
 
