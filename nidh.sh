@@ -1,14 +1,14 @@
-cd "/home/deva/Downloads"
+# cd "/home/deva/Downloads"
 
-mv -f "dpd.ods" "/home/deva/Documents/dpd-br/dpd.ods"
+# mv -f "dpd.ods" "/home/deva/Documents/dpd-br/dpd.ods"
 
-cd "/home/deva/Documents/dpd-br"
+# cd "/home/deva/Documents/dpd-br"
 
-python3 "utilities/ods2csv.py"
+# python3 "utilities/ods2csv.py"
 
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "dpd-pali.csv updated"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# echo "dpd-pali.csv updated"
+# echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 cd "/home/deva/Documents/dps/scripts"
 

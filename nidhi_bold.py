@@ -3,7 +3,7 @@ import pandas as pd
 from pandas_ods_reader import read_ods 
 import re
 
-df = pd.read_csv("/home/deva/Documents/dpd-br/csvs/dpd-full-old.csv", sep="\t", dtype= str)
+df = pd.read_csv("/home/deva/Documents/dpd-db/csvs/dpd-full.csv", sep="\t", dtype= str)
 df.fillna("", inplace=True)
 
 # print(df['Pāli Root'].dtype)
