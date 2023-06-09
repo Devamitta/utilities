@@ -6,9 +6,9 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "making csv with bold and sorted by pāli alphabet"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+# python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
-mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
+# mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
 # python3 DPD-ex-insert.py
 

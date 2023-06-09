@@ -173,9 +173,9 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "please push test.md & ru-test.md via VSCode"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-cd '/home/deva/Desktop'
+cd '/home/deva/Documents'
 
-code study-tools.code-workspace
+code sbs.code-workspace
 
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
