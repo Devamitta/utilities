@@ -4,23 +4,23 @@ from os.path import basename
 csv_file = '../spreadsheets/dps-dpd-ex.csv'
 
 with open(csv_file) as f, \
-        open('filtered_csv/plus_case.csv', 'w') as plus_case, \
-        open('filtered_csv/meaning_1.csv', 'w') as meaning_1, \
-        open('filtered_csv/meaning_lit.csv', 'w') as meaning_lit, \
-        open('filtered_csv/root_pali.csv', 'w') as root_pali, \
-        open('filtered_csv/root_base.csv', 'w') as root_base, \
-        open('filtered_csv/construction.csv', 'w') as construction, \
-        open('filtered_csv/derivative.csv', 'w') as derivative, \
-        open('filtered_csv/suffix.csv', 'w') as suffix, \
-        open('filtered_csv/phonetic.csv', 'w') as phonetic, \
-        open('filtered_csv/compound_type.csv', 'w') as compound_type, \
-        open('filtered_csv/compound_construction.csv', 'w') as compound_construction, \
-        open('filtered_csv/sanskrit.csv', 'w') as sanskrit, \
-        open('filtered_csv/variant.csv', 'w') as variant, \
-        open('filtered_csv/commentary.csv', 'w') as commentary, \
-        open('filtered_csv/example_1.csv', 'w') as example_1, \
-        open('filtered_csv/example_2.csv', 'w') as example_2, \
-        open('filtered_csv/notes.csv', 'w') as notes:
+        open('../spreadsheets/to-merge/plus_case.csv', 'w') as plus_case, \
+        open('../spreadsheets/to-merge/meaning_1.csv', 'w') as meaning_1, \
+        open('../spreadsheets/to-merge/meaning_lit.csv', 'w') as meaning_lit, \
+        open('../spreadsheets/to-merge/root_pali.csv', 'w') as root_pali, \
+        open('../spreadsheets/to-merge/root_base.csv', 'w') as root_base, \
+        open('../spreadsheets/to-merge/construction.csv', 'w') as construction, \
+        open('../spreadsheets/to-merge/derivative.csv', 'w') as derivative, \
+        open('../spreadsheets/to-merge/suffix.csv', 'w') as suffix, \
+        open('../spreadsheets/to-merge/phonetic.csv', 'w') as phonetic, \
+        open('../spreadsheets/to-merge/compound_type.csv', 'w') as compound_type, \
+        open('../spreadsheets/to-merge/compound_construction.csv', 'w') as compound_construction, \
+        open('../spreadsheets/to-merge/sanskrit.csv', 'w') as sanskrit, \
+        open('../spreadsheets/to-merge/variant.csv', 'w') as variant, \
+        open('../spreadsheets/to-merge/commentary.csv', 'w') as commentary, \
+        open('../spreadsheets/to-merge/example_1.csv', 'w') as example_1, \
+        open('../spreadsheets/to-merge/example_2.csv', 'w') as example_2, \
+        open('../spreadsheets/to-merge/notes.csv', 'w') as notes:
     dict_reader = csv.DictReader(f, delimiter='\t')
     out_files = [plus_case, meaning_1, meaning_lit, root_pali, root_base,
                  construction, derivative, suffix, phonetic, compound_type, compound_construction, sanskrit, variant, commentary, example_1, example_2, notes]
