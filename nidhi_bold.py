@@ -86,6 +86,7 @@ df['Grammar'] = df['Grammar'].replace({r'^(, )'}, '',  regex=True)
 
 df.insert(17, 'variant', df['Variant – same constr or diff reading'])
 df.insert(2, 'sbs_class_anki', None)
+df.insert(3, 'sbs_category', None)
 df.insert(10, 'ru_meaning', None)
 df.insert(11, 'ru_meaning_lit', None)
 df.insert(12, 'sbs_notes', None)
@@ -119,7 +120,7 @@ df.insert(56, 'sbs_index', None)
 
 
 
-df = df[['ID', 'Pāli1', 'Fin', 'sbs_class_anki', 'POS', 'Grammar', 'Derived from', 'Neg', 'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Literal Meaning', 'ru_meaning', 'ru_meaning_lit', 'SBS Meaning', 'Pāli Root', 'Base', 'Construction', 'Phonetic Changes', 'Derivative', 'Suffix', 'Compound', 'Compound Construction', 'Sanskrit', 'Sk Root', 'variant', 'Commentary', 'Notes', 'sbs_notes', 'ru_notes', 'Source1', 'Sutta1', 'Example1', 'sbs_chant_Pāli1', 'sbs_chant_eng_1', 'sbs_chapter_1', 'Source 2', 'Sutta2', 'Example 2', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2', 'Source 3', 'Sutta 3', 'Example 3', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3', 'Source 4', 'Sutta 4', 'Example 4', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4', 'Source 5', 'Sutta 5', 'Example 5', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_index', 'Stem', 'Pattern']]
+df = df[['ID', 'Pāli1', 'Fin', 'sbs_class_anki', 'sbs_category', 'POS', 'Grammar', 'Derived from', 'Neg', 'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Literal Meaning', 'ru_meaning', 'ru_meaning_lit', 'SBS Meaning', 'Pāli Root', 'Base', 'Construction', 'Phonetic Changes', 'Derivative', 'Suffix', 'Compound', 'Compound Construction', 'Sanskrit', 'Sk Root', 'variant', 'Commentary', 'Notes', 'sbs_notes', 'ru_notes', 'Source1', 'Sutta1', 'Example1', 'sbs_chant_Pāli1', 'sbs_chant_eng_1', 'sbs_chapter_1', 'Source 2', 'Sutta2', 'Example 2', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2', 'Source 3', 'Sutta 3', 'Example 3', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3', 'Source 4', 'Sutta 4', 'Example 4', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4', 'Source 5', 'Sutta 5', 'Example 5', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_index', 'Stem', 'Pattern']]
 
 # saving csv file
 df.to_csv("/home/deva/Documents/dps/spreadsheets/nidh_bold.csv", sep="\t", index=None)
