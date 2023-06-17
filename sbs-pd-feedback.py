@@ -37,8 +37,8 @@ df.loc[filter, ['Tags']] = df['sbs_chant_pali_1'] + " " + df['sbs_chant_pali_2']
 # sort by sbs_index
 df = df.sort_values(by=['sbs_index', 'example_2'])
 
-df = df.drop(['Fin', 'stem', 'pattern', 'sbs_class_anki', 'count', 'sbs_class', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes'], axis = 1)
-print("columns 'Fin', 'stem', 'pattern', 'sbs_class_anki', 'count', 'sbs_class', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes' - has been dropped")
+df = df.drop(['sbs_category', 'Fin', 'stem', 'pattern', 'sbs_class_anki', 'count', 'sbs_class', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes'], axis = 1)
+print("columns 'sbs_category', 'Fin', 'stem', 'pattern', 'sbs_class_anki', 'count', 'sbs_class', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes' - has been dropped")
 
 # save csv
 df.to_csv("../csv-for-anki/sbs-pd-feedback.csv", sep="\t", index=None)
