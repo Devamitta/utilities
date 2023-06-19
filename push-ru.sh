@@ -8,7 +8,7 @@ echo "ru-dict moved on the server"
 
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-13.05.2023_14-26-57' temp-push/ru-pali-dict.zip
+gh release upload --clobber 'artifacts-13.05.2023_14-42-54' temp-push/ru-pali-dict.zip
 
 echo "ru-dict uploaded on GitHub"
 
@@ -22,6 +22,6 @@ echo "ru-dict uploaded on GitHub"
 
 # cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-# gh release upload --clobber 'artifacts-13.05.2023_14-26-57' temp-push/dps.zip
+# gh release upload --clobber 'artifacts-13.05.2023_14-42-54' temp-push/dps.zip
 
 # echo "dps uploaded on GitHub"
