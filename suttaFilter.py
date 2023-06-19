@@ -26,7 +26,7 @@ sutta = input("number of sutta to search: ")
 
 
 # filter all words from source_1 (choose strictly fit or contain)
-test1 = df_nid['source_1'] == sutta
+test1 = df_nid['Source1'] == sutta
 # test1 = df_nid['source_1'].str.contains(sutta)
 filter = test1
 df1 = df_nid.loc[filter]
@@ -36,14 +36,14 @@ df1 = df_nid.loc[filter]
 
 
 # filter all words from source_2 (choose strictly fit or contain)
-test2 = df_nid['source_2'] == sutta
+test2 = df_nid['Source 2'] == sutta
 # test2 = df_nid['source_2'].str.contains(sutta)
 filter = test2
 df2 = df_nid.loc[filter]
 
 # if headword from df2 is in df1, then delete whole row from df2
 
-logix = df2['pali_1'].isin(df1['pali_1'])
+logix = df2['ID'].isin(df1['ID'])
 
 df2 = df2.drop(df2[logix].index)
 
@@ -52,9 +52,9 @@ df2 = df2.drop(df2[logix].index)
 
 
 # move examples from 2 to 1
-df2["source_1"] = df2["source_2"]
-df2["sutta_1"] = df2["sutta_2"]
-df2["example_1"] = df2["example_2"]
+# df2["source_1"] = df2["source_2"]
+# df2["sutta_1"] = df2["sutta_2"]
+# df2["example_1"] = df2["example_2"]
 
 
 # In[ ]:
@@ -67,11 +67,11 @@ df_combined = pd.concat([df1, df2])
 
 
 # make source2 sutta2 example2 empty
-test0 = df_combined['pali_1'] != ""
-filter = test0
-df_combined.loc[filter, ['source_2']] = ""
-df_combined.loc[filter, ['sutta_2']] = ""
-df_combined.loc[filter, ['example_2']] = ""
+# test0 = df_combined['pali_1'] != ""
+# filter = test0
+# df_combined.loc[filter, ['source_2']] = ""
+# df_combined.loc[filter, ['sutta_2']] = ""
+# df_combined.loc[filter, ['example_2']] = ""
 
 
 # In[ ]:
@@ -79,12 +79,12 @@ df_combined.loc[filter, ['example_2']] = ""
 
 # if headword from df_combined is in df_dps, then delete whole row from df_combined
 
-logix = df_combined['pali_1'].isin(df_dps['pali_1'])
+logix = df_combined['ID'].isin(df_dps['id'])
 
 df_final = df_combined.drop(df_combined[logix].index)
 
 # filter by alphabet
-df_final = df_final.sort_values(by='pali_1')
+df_final = df_final.sort_values(by='ID')
 
 
 # In[ ]:

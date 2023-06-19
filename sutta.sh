@@ -1,4 +1,4 @@
-bash anki.sh
+# bash anki.sh
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 date
