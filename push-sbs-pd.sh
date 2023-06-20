@@ -8,6 +8,6 @@ echo "sbs-pd moved on the server"
 
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-13.05.2023_14-42-54' temp-push/sbs-pd.zip
+gh release upload --clobber 'artifacts-20.06.2023_13-45-06' temp-push/sbs-pd.zip
 
 echo "sbs-pd uploaded on GitHub"
