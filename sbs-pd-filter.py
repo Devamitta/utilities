@@ -8,9 +8,12 @@ df.fillna("", inplace=True)
 test1 = df['pali_1'] != ""
 filter = test1
 df.loc[filter, ['ru_meaning']] = ""
+df.loc[filter, ['ru_meaning_lit']] = ""
+
 
 # filter all SBS words
-test2 = df['Fin'].str.contains('s')
+test2 = df['sbs_index'] != ""
+# test2 = df['Fin'].str.contains('s')
 filter = test2
 df_sbs = df.loc[filter]
 
