@@ -19,7 +19,7 @@ df.loc[filter, ['meaning_1']] = df['meaning_1'] + "; lit. " + df['meaning_lit']
 
 df = df.drop(['meaning_lit'], axis=1)
 
-print("column 'meaning_lit' has been dropped")
+# print("column 'meaning_lit' has been dropped")
 
 # concat Ru Meaning
 test1 = df['pali_1'] != ""
@@ -29,12 +29,12 @@ df.loc[filter, ['ru_meaning']] = df['ru_meaning'] + "; досл. " + df['ru_mean
 
 df = df.drop(['ru_meaning_lit'], axis=1)
 
-print("column 'ru_meaning_lit' has been dropped")
+# print("column 'ru_meaning_lit' has been dropped")
 
 # make original dps for anki
 
 df_anki = df.drop(['sbs_class', 'count', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes'], axis=1)
-print("columns 'sbs_class', 'count', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes' has been dropped for anki")
+# print("columns 'sbs_class', 'count', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes' has been dropped for anki")
 
 df_anki.to_csv("../csv-for-anki//dps-orig.csv", sep="\t", index=None)
 
@@ -44,7 +44,7 @@ filter = test2
 df_sutta = df.loc[filter]
 
 df_sutta = df_sutta.drop(['sbs_class', 'count', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes'], axis=1)
-print("columns 'sbs_class', 'count', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes' has been dropped for anki")
+# print("columns 'sbs_class', 'count', 'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'move', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_notes', 'ru_notes' has been dropped for anki")
 
 # change ru_meaning
 test2 = df_sutta['pali_1'] != ""
@@ -83,7 +83,8 @@ df_sutta['Feedback'] = f"""Spot a mistake? <a class="link" href="https://docs.go
 # save csv sutta
 df_sutta.to_csv("../csv-for-anki/suttas-feedback.csv", sep="\t", index=None)
 
-print(f">>>>>>>>>>>>>>>>>>>>test number : {ran} <<<<<<<<<<<<<<<<<<<<<")
+print("\033[32m" + f">>>>>>>>>>>>>>>>>>>>test number : {ran} <<<<<<<<<<<<<<<<<<<<<" + "\033[0m")
+
 
 # make test.md
 result_markdown_1 = markdown.markdown(f"""
