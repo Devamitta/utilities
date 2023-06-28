@@ -16,7 +16,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "moving dps-full to dpd-db"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-cp -f "/home/deva/Documents/dps/spreadsheets/dps-full.csv" "/home/deva/Documents/dpd-db/dps/dps.csv"
+cp -f "/home/deva/Documents/dps/spreadsheets/dps-full.csv" "/home/deva/Documents/dpd-db/dps/dps.tsv"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "push in vscode"
