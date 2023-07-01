@@ -3,6 +3,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please update Pātimokkha Word by Word.ods" 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
+
 cd "/home/deva/Documents/dps/patimokkha_dict"
 
 while true; do
