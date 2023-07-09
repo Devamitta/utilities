@@ -100,17 +100,18 @@ class ReadOds:
         for p_text in p_texts:
             styled_texts = p_text.find_all('text:span')
             for styled_text in styled_texts:
-
+                # Check if styled_text.string is not None
+                if styled_text.string is not None:  
                 #find bold styles and replace with b tag
-                if styled_text.has_attr('text:style-name'):
-                    if styled_text['text:style-name'] in self.bold_names:
-                        new_b_tag = self.soup.new_tag('b')
-                        new_b_tag.string = styled_text.string
-                        styled_text.replace_with(new_b_tag)
+                    if styled_text.has_attr('text:style-name'):
+                        if styled_text['text:style-name'] in self.bold_names:
+                            new_b_tag = self.soup.new_tag('b')
+                            new_b_tag.string = styled_text.string
+                            styled_text.replace_with(new_b_tag)
+                        else:
+                            styled_text.replace_with(styled_text.string)
                     else:
                         styled_text.replace_with(styled_text.string)
-                else:
-                    styled_text.replace_with(styled_text.string)
 
             #implement for <text:s text:c="5"> //5 spaces
             styled_texts = p_text.find_all('text:s')
