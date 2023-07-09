@@ -122,6 +122,8 @@ df.insert(56, 'sbs_index', None)
 
 df = df[['ID', 'Pāli1', 'Fin', 'sbs_class_anki', 'sbs_category', 'POS', 'Grammar', 'Derived from', 'Neg', 'Verb', 'Trans', 'Case', 'Meaning IN CONTEXT', 'Literal Meaning', 'ru_meaning', 'ru_meaning_lit', 'SBS Meaning', 'Pāli Root', 'Base', 'Construction', 'Phonetic Changes', 'Derivative', 'Suffix', 'Compound', 'Compound Construction', 'Sanskrit', 'Sk Root', 'variant', 'Commentary', 'Notes', 'sbs_notes', 'ru_notes', 'Source1', 'Sutta1', 'Example1', 'sbs_chant_Pāli1', 'sbs_chant_eng_1', 'sbs_chapter_1', 'Source 2', 'Sutta2', 'Example 2', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2', 'Source 3', 'Sutta 3', 'Example 3', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3', 'Source 4', 'Sutta 4', 'Example 4', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4', 'Source 5', 'Sutta 5', 'Example 5', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5', 'sbs_index', 'Stem', 'Pattern']]
 
-# saving csv file
+# saving csv and xlsx files
 df.to_csv("/home/deva/Documents/dps/spreadsheets/nidh_bold.csv", sep="\t", index=None)
+df.to_excel("/home/deva/Documents/dps/spreadsheets/nidh_bold.xlsx", index=None)
+
 
