@@ -69,5 +69,7 @@ python3 "unzip-dps.py"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"
 
-xed ~/.mkall-errors.txt
+cd
+
+txt ~/.mkall-errors.txt
 
