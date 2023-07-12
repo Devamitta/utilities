@@ -148,7 +148,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Anki decks and csv of SBS-PED ; PAT ; DHP & DPS moved for share"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-bash push-all.sh
+# bash push-all.sh
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "DPD SBS-PD & pali-ru-dict replased on the server"
