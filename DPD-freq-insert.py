@@ -4,7 +4,7 @@ from pandas_ods_reader import read_ods
 import re
 from natsort import index_natsorted
 
-df_dpd = pd.read_csv("/home/deva/Documents/dpd-db/csvs/dpd-full.csv", sep="\t", dtype= str)
+df_dpd = pd.read_csv("/home/deva/Documents/dpd-db/csvs/dpd-dps-full.csv", sep="\t", dtype= str)
 df_dpd.fillna("")
 
 df_freq = pd.read_csv("/home/deva/Documents/dps/spreadsheets/frequency-ebt.csv", sep="\t", dtype= str)
@@ -15,7 +15,7 @@ df_freq.fillna("")
 
 # df_dps = df_dps[['id', 'sbs_class_anki', 'sbs_index', 'sbs_category']]
 
-df_dpd["pali_3"] = df_dpd["pali_1"]
+df_dpd["pali_3"] = df_dpd  ["pali_1"]
 
 # df_dpd = df_dpd.drop(['ID', 'POS'], axis=1)
 
@@ -37,5 +37,5 @@ df_merged = df_merged.drop(['pali_3'], axis=1)
 
 # df_merged_2.to_csv("/home/deva/Documents/dps/spreadsheets/dpd-freq.csv", sep="\t", index=None)
 
-df_merged.to_csv("/home/deva/Documents/dps/spreadsheets/dpd-freq.csv", sep="\t", index=None)
+df_merged.to_csv("/home/deva/Documents/dps/spreadsheets/dpd-dps-freq.csv", sep="\t", index=None)
 
