@@ -4,7 +4,7 @@ cd "/home/deva/Documents/dps/word-frequency"
 while true; do
     read -p "grammar-csv for anki need update?" yn
     case $yn in
-        [Yy]* ) python3 grammar-csv.py; 
+        [Yy]* ) poetry run python grammar-csv.py; 
         break;;
         [Nn]* ) break;;
         *  ) echo "only yes or no";;
@@ -20,7 +20,7 @@ cd "/home/deva/Documents/dps/scripts"
 while true; do
     read -p "dps need update?" yn
     case $yn in
-        [Yy]* ) python3 ods2csv.py "../spreadsheets/dps.ods" PALI; 
+        [Yy]* ) poetry run python ods2csv.py "../spreadsheets/dps.ods" PALI; 
         
         break;;
         [Nn]* ) break;;
@@ -36,7 +36,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 while true; do
     read -p "nidh need update?" yn
     case $yn in
-        [Yy]* ) python3 xls2csv.py "../spreadsheets/nidh_bold.xlsx"; break;;
+        [Yy]* ) poetry run python xls2csv.py "../spreadsheets/nidh_bold.xlsx"; break;;
         [Nn]* ) break;;
         *  ) echo "only yes or no";;
     esac
@@ -48,7 +48,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 while true; do
     read -p "friquent-words need update?" yn
     case $yn in
-        [Yy]* ) python3 ods2csv.py "../pāli-course/frequent-words.ods" words; break;;
+        [Yy]* ) poetry run python ods2csv.py "../pāli-course/frequent-words.ods" words; break;;
         [Nn]* ) break;;
         *  ) echo "only yes or no";;
     esac
@@ -62,7 +62,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 cd "/home/deva/Documents/dps/word-frequency"
 
-python3 pos-maker.py
+poetry run python pos-maker.py
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "summary-for-class.csv generated"
@@ -96,7 +96,7 @@ date
 
 cd "/home/deva/Documents/dps/scripts"
 
-python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+poetry run python ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
@@ -105,4 +105,4 @@ echo "Done"
 date
 
 cd "/home/deva/Documents/dps/word-frequency"
-python3 class-feedback.py
+poetry run python class-feedback.py

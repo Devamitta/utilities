@@ -42,14 +42,14 @@ echo "making csv with bold and sorted by pāli alphabet"
 while true; do
     read -p "need make upadted dps-full?" yn
     case $yn in
-        [Yy]* ) python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI; break;;
+        [Yy]* ) poetry run python ods2csv-sort.py "../spreadsheets/dps.ods" PALI; break;;
         [Nn]* ) break;;
         *  ) echo "only yes or no";;
     esac
 done
 
 
-# python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+# poetry run python ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 
 duplicates=$(sort -t ',' -k 1 "../spreadsheets/dps.ods-pali-s.csv" | uniq -d)
@@ -76,7 +76,7 @@ while true; do
     esac
 done
 
-python3 DPD-ex-insert.py
+poetry run python DPD-ex-insert.py
 
 echo "dps-dpd-ex.csv has been updated"
 

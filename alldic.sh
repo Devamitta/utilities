@@ -6,12 +6,12 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "making csv with bold and sorted by pāli alphabet"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-# python3 ods2csv-sort.py "../spreadsheets/dps.ods" PALI
+# poetry run python ods2csv-sort.py "../spreadsheets/dps.ods" PALI
 
 # mv "../spreadsheets/dps.ods-pali-s.csv" "../spreadsheets/dps-full.csv"
 
 
-# python3 DPD-ex-insert.py
+# poetry run python DPD-ex-insert.py
 
 # echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 # echo "dps-dpd-ex.csv has been updated"
@@ -21,7 +21,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
 # cd "/home/deva/Documents/dps/scripts"
-python3 "sbs-pd-filter.py"
+poetry run python "sbs-pd-filter.py"
 
 echo "filter SBS words from DPS"
 
@@ -32,7 +32,7 @@ date
 cd "../inflection"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-python3 "inflection generator.py"
+poetry run python "inflection generator.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "inflection generated"
@@ -41,7 +41,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd "../inflection-en"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-python3 "inflection generator.py"
+poetry run python "inflection generator.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "inflection-en generated"
@@ -53,12 +53,12 @@ cd "../exporter"
 # source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.10/bin/activate
 # poetry shell
 # source /home/deva/.cache/pypoetry/virtualenvs/exporter-uJ6yRP2M-py3.11/bin/activate
-python3 exporter.py run-generate-html-and-json
-python3 exporter.py run-generate-goldendict
-python3 exporter.py run-generate-html-and-json-sbs
-python3 exporter.py run-generate-goldendict-sbs
-# python3 exporter.py run-generate-html-and-json-dps-en
-# python3 exporter.py run-generate-goldendict-dps-en
+poetry run python exporter.py run-generate-html-and-json
+poetry run python exporter.py run-generate-goldendict
+poetry run python exporter.py run-generate-html-and-json-sbs
+poetry run python exporter.py run-generate-goldendict-sbs
+# poetry run python exporter.py run-generate-html-and-json-dps-en
+# poetry run python exporter.py run-generate-goldendict-dps-en
 
 
 
@@ -72,7 +72,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "unzip and copy to GoldenDict"
 cd "../scripts"
-python3 "unzip-dps.py"
+poetry run python "unzip-dps.py"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Please open GoldenDict > press Alt+Z > F3 > Rescan now"

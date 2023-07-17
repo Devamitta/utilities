@@ -2,4 +2,4 @@
 
 cd '/home/deva/Documents/dpd-db'
 
-poetry run python3 gui/corrections.py
+poetry run python gui/corrections.py

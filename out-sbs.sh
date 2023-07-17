@@ -3,4 +3,4 @@ cd "../inflection"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-python3 "test for most common words.py" 14
+poetry run python "test for most common words.py" 14
