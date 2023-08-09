@@ -1,3 +1,4 @@
+# filter all sbs-pd related words for generating sbs pali dictionary
 
 import pandas as pd
 
@@ -18,7 +19,7 @@ filter = test2
 df_sbs = df.loc[filter]
 
 # # save csv
-# df_sbs.to_csv("../csv-for-anki/sbs-pd.csv", sep="\t", index=None)
+# df_sbs.to_csv("../csv-for-anki/sbs-pd.csv", sep="\t", index=False)
 
 # filter all class
 test2 = df['sbs_class_anki'] != ""
@@ -47,7 +48,7 @@ df_uniq_s = df_sutta.drop(df_sutta[logix].index)
 df_combined_final = pd.concat([df_combined, df_uniq_s])
 
 # save csv
-df_combined_final.to_csv("../spreadsheets/sbs-pd.csv", sep="\t", index=None)
+df_combined_final.to_csv("../spreadsheets/sbs-pd.csv", sep="\t", index=False)
 
 
 
