@@ -1,4 +1,8 @@
-echo "copy ru-dict"
+#!/usr/bin/env bash
+
+# copy ru-dict on the server and poush on latest release in GitHub
+
+echo "coping ru-dict"
 
 cp -rf ~/Documents/GoldenDict/ru-pali-dictionary ~/filesrv1/share1/Sharing\ between\ users/1\ For\ Everyone/Software/Golden\ Dictionary/Optional/
 
@@ -8,20 +12,6 @@ echo "ru-dict moved on the server"
 
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-12.07.2023_06-16-44' temp-push/ru-pali-dict.zip
+gh release upload --clobber 'artifacts-02.08.2023_08-23-46' temp-push/ru-pali-dict.zip
 
 echo "ru-dict uploaded on GitHub"
-
-# echo "copy dps"
-
-# cp -rf ~/Documents/GoldenDict/dps ~/filesrv1/share1/Sharing\ between\ users/1\ For\ Everyone/Software/Golden\ Dictionary/Optional/
-
-# cp -f "/home/deva/Documents/dps/exporter/share/dps.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dps.zip"
-
-# echo "dps moved on the server"
-
-# cd "/home/deva/Documents/sasanarakkha/study-tools"
-
-# gh release upload --clobber 'artifacts-12.07.2023_06-16-44' temp-push/dps.zip
-
-# echo "dps uploaded on GitHub"
