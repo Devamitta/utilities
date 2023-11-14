@@ -11,10 +11,20 @@ if ! grep -qs '/home/deva/filesrv1/share1' /proc/mounts; then
         echo "Failed to mount /home/deva/filesrv1/share1. Exiting."
         exit 1
     fi
-else echo "/home/deva/filesrv1/share1 is mounted already"    
+else 
+    echo "/home/deva/filesrv1/share1 is mounted already"    
 fi
 
-rsync -azxi --no-links --exclude-from='/home/deva/.rsync-exclude' /home/deva/Audio /home/deva/Videos /home/deva/Documents /home/deva/.local/bin /home/deva/backups /home/deva/logs "/home/deva/filesrv1/share1/devamitta/"
+if ! grep -qs '/home/deva/filesrv1/share2' /proc/mounts; then
+    # Try to mount it.
+    if ! mount /home/deva/filesrv1/share2; then
+        echo "Failed to mount /home/deva/filesrv1/share2."
+    fi
+else
+    echo "/home/deva/filesrv1/share2 is mounted already"
+fi
+
+rsync -azxi --no-links --exclude-from='/home/deva/.rsync-exclude' /home/deva/Audio /home/deva/Videos /home/deva/Documents /home/deva/backups /home/deva/logs "/home/deva/filesrv1/share1/devamitta/"
 
 echo "------ backup_filesrv Script Ended at $(date) ------"
 
