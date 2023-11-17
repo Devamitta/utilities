@@ -10,29 +10,29 @@ cd "/home/deva/Documents/dps/utilities"
 
 cd "/home/deva/Downloads"
 
-cp -f "Vocab Pāli Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/pali-class/Vocab Pāli Class.apkg"
+cp -f "Vocab Pali Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/vocab-pali-class.apkg"
 
-mv -f "Vocab Pāli Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Vocab Pāli Class.apkg"
+mv -f "Vocab Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Vocab Pali Class.apkg"
 
-cp -f "Grammar Pāli Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/pali-class/Grammar Pāli Class.apkg"
+cp -f "Grammar Pali Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/grammar-pali-class.apkg"
 
-mv -f "Grammar Pāli Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Grammar Pāli Class.apkg"
+mv -f "Grammar Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Grammar Pali Class.apkg"
 
-cp -f "Roots Pāli Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/pali-class/Roots Pāli Class.apkg"
+cp -f "Roots Pali Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/roots-pali-class.apkg"
 
-mv -f "Roots Pāli Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Roots Pāli Class.apkg"
+mv -f "Roots Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Roots Pali Class.apkg"
 
-cp -f "Phonetic Changes Pāli Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/pali-class/Phonetic Changes Pāli Class.apkg"
+cp -f "Phonetic Changes Pali Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/phonetic-pali-class.apkg"
 
-mv -f "Phonetic Changes Pāli Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Phonetic Changes Pāli Class.apkg"
+mv -f "Phonetic Changes Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Phonetic Changes Pali Class.apkg"
 
-cp -f "Common Roots Pāli Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/pali-class/Common Roots Pāli Class.apkg"
+cp -f "Common Roots Pali Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/common-roots-pali-class.apkg"
 
-mv -f "Common Roots Pāli Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Common Roots Pāli Class.apkg"
+mv -f "Common Roots Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Common Roots Pali Class.apkg"
 
-cp -f "Suttas Advanced Pāli Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/pali-class/Suttas Advanced Pāli Class.apkg"
+cp -f "Suttas Advanced Pali Class.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/suttas-advanced-pali-class.apkg"
 
-mv -f "Suttas Advanced Pāli Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Suttas Advanced Pāli Class.apkg"
+mv -f "Suttas Advanced Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Suttas Advanced Pali Class.apkg"
 
 
 
@@ -44,11 +44,11 @@ echo "all apkg - done"
 
 # echo "all vocab.xlsx - done"
 
-cp -rf "/home/deva/Documents/dps/csv-for-anki/classes" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/"
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/"
 
-cp -rf "/home/deva/Documents/dps/csv-for-anki/grammar" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/"
+# cp -rf "/home/deva/Documents/dps/csv-for-anki/grammar" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/"
 
-cp -f "/home/deva/Documents/dps/csv-for-anki/abbr.xlsx" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/abbreviations.xlsx"
+# cp -f "/home/deva/Documents/dps/csv-for-anki/abbr.xlsx" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/abbreviations.xlsx"
 
 echo "all csv for anki - done"
 

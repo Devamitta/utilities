@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-# all left bash (the rest in dpd-db/dps/bash)
+# all for update of sbs-study-tools (https://sasanarakkha.github.io/study-tools/)
+
+
+# cd '/home/deva/Documents/dpd-db'
+
+# poetry run bash dps/bash/update_csvs.sh
+
+# cd "/home/deva/Documents/dps/exporter"
+
+# bash mkall.sh
 
 echo -e "\033[1;33m We are going to make various csv and push decks on the server. \033[0m"
 
@@ -15,7 +24,7 @@ while true; do
     case $yn in
         [Yy]* )
             echo -e "\033[1;33m generating patimokkha.csv...\033[0m"
-            bash makecsv.sh
+            bash make_pat.sh
             break;;
         [Nn]* )
             break;;
@@ -26,7 +35,7 @@ done
 
 cd "/home/deva/Downloads"
 
-mv -f "grammar.xlsx" "/home/deva/Documents/dps/pāli-course/grammar.xlsx"
+mv -f "grammar.xlsx" "/home/deva/Documents/pali_resources/pāli-course/grammar.xlsx"
 
 cd "/home/deva/Documents/dps/utilities"
 
@@ -81,6 +90,27 @@ while true; do
     esac
 done
 
+cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push"
+
+while true; do
+    echo -ne "\033[1;34m need to push on GitHub? \033[0m"
+    read yn
+    case $yn in
+        [Yy]* )
+            echo -e "\033[1;33m pushing all...\033[0m"
+            bash github-assets-uploader.sh
+            break;;
+        [Nn]* )
+            break;;
+        *  )
+            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
+    esac
+done
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "please change all artifacts in dps via VSCode"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
 
 cd "/home/deva"
 
@@ -90,7 +120,7 @@ while true; do
     case $yn in
         [Yy]* )
             echo -e "\033[1;33m opening dpd-db.code-workspace...\033[0m"
-            code dpd-db.code-workspace
+            code dpd-db.code-workspace &
             break;;
         [Nn]* )
             break;;
@@ -107,7 +137,7 @@ while true; do
     case $yn in
         [Yy]* )
             echo -e "\033[1;33m opening releases page...\033[0m"
-            google-chrome study-tools-releases.html
+            google-chrome study-tools-releases.html &
             break;;
         [Nn]* )
             break;;

@@ -4,7 +4,7 @@
 import pandas as pd
 
 # Load the Excel file into a pandas ExcelFile object
-excel_file = pd.ExcelFile('../pali_resources/pāli-course/grammar.xlsx')
+excel_file = pd.ExcelFile('../../pali_resources/pāli-course/grammar.xlsx')
 
 # Create a dictionary to store the DataFrames
 dfs = {}
@@ -58,7 +58,7 @@ df_abbr_class = filtered_df.drop(columns=['ru-meaning', 'ru-abbrev', 'type'])
 df_sum_abbr = pd.concat([df_abbr_class, dfs['alph'], dfs['samasa'], dfs['upasagga']])
 
 # Save df_sum_abbr to a CSV file
-df_sum_abbr.to_csv("../csv-for-anki/grammar/cl_sum_abbr.csv", sep="\t", index=False)
+df_sum_abbr.to_csv("../../dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_abbr.csv", sep="\t", index=False)
 
 # Print completion message in green color
 print("\033[32mExtraction df_sum_abbr for class complete.\033[0m")
@@ -77,7 +77,7 @@ df_sum_sandhi = pd.concat([
 ])
 
 # Save df_sum_sandhi to a CSV file
-df_sum_sandhi.to_csv("../csv-for-anki/grammar/cl_sum_sandhi.csv", sep="\t", index=False)
+df_sum_sandhi.to_csv("../../dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_sandhi.csv", sep="\t", index=False)
 
 # Print completion message in green color
 print("\033[32mExtraction df_sum_sandhi for class complete.\033[0m")
@@ -91,7 +91,7 @@ dfs_to_concat = [
 df_sum_gramm = pd.concat(dfs_to_concat)
 
 # Save df_sum_gramm to a CSV file
-df_sum_gramm.to_csv("../csv-for-anki/grammar/cl_sum_gramm.csv", sep="\t", index=False)
+df_sum_gramm.to_csv("../../dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_gramm.csv", sep="\t", index=False)
 
 # Save the column list of df_sum_abbr to a text file
 file_path = "../../sasanarakkha/study-tools/anki-style/field-list-grammar-abbr.txt"
