@@ -90,6 +90,34 @@ while true; do
     esac
 done
 
+while true; do
+    echo -ne "\033[1;34m need to push individually on GitHub? \033[0m"
+    read yn
+    case $yn in
+        [Yy]* )
+            echo -e "\033[1;33m pushing all...\033[0m"
+            bash push-from-temp.sh
+            ;;
+        [Nn]* )
+            break;;
+        *  )
+            echo -e "\033[1;31mPlease enter only yes or no\033[0m";;
+    esac
+
+    # Ask if the user wants to repeat
+    echo -ne "\033[1;34m repeat? \033[0m"
+    read repeat
+    case $repeat in
+        [Yy]* )
+            continue;;
+        [Nn]* )
+            break;;
+        * )
+            echo -e "\033[1;31mPlease enter only yes or no\033[0m";;
+    esac
+done
+
+
 cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push"
 
 while true; do

@@ -44,7 +44,7 @@ echo "all apkg - done"
 
 # echo "all vocab.xlsx - done"
 
-cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/"
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class"/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/csvs/"
 
 # cp -rf "/home/deva/Documents/dps/csv-for-anki/grammar" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/"
 
