@@ -2,6 +2,18 @@
 # https://sasanarakkha.github.io/study-tools/pali-class/pali-class.html
 
 import pandas as pd
+import sys
+
+from rich.console import Console
+
+sys.path.append("/home/deva/Documents/dpd-db") # https://github.com/digitalpalidictionary/dpd-db
+
+from tools.tic_toc import tic, toc
+
+
+console = Console()
+
+tic()
 
 # Load the Excel file into a pandas ExcelFile object
 excel_file = pd.ExcelFile('../../pali_resources/pāli-course/grammar.xlsx')
@@ -37,16 +49,17 @@ for sheet_name in excel_file.sheet_names:
 # Now you can access each DataFrame using its sheet name as a key
 # For example, dfs['Sheet1'] will give you the DataFrame for 'Sheet1', and so on.
 
-# Save the DataFrame to a CSV file after dropping unnecessary columns
-dfs['abbr'].drop(columns=['id', 'type', 'pattern', 'feedback']).to_csv(
-    "../exporter/assets/abbreviations.csv",
-    sep="\t",
-    index=False,
-    header=True
-)
+console.print("[bold green]extracting abbreviations.csv for exporter.")
 
-# Print completion message in green color
-print("\033[32mExtraction abbreviations.csv for exporter complete.\033[0m")
+# Save the DataFrame to a CSV file after dropping unnecessary columns
+trimmed_df = dfs['abbr'].drop(columns=['id', 'type', 'pattern', 'feedback'])
+trimmed_df.to_csv("../exporter/assets/abbreviations.csv", sep="\t", index=False, header=True)
+
+# Printing the number of rows in the trimmed DataFrame
+row_count = len(trimmed_df)
+print("Number of rows:", row_count)
+
+console.print("[bold green]extracting df_sum_abbr for class.")
 
 # Filter the DataFrame to include only rows where 'type' column is not null
 filtered_df = dfs['abbr'][dfs['abbr']['type'].notna()]
@@ -55,13 +68,15 @@ filtered_df = dfs['abbr'][dfs['abbr']['type'].notna()]
 df_abbr_class = filtered_df.drop(columns=['ru-meaning', 'ru-abbrev', 'type'])
 
 # Concatenate df_abbr_class, df_alph, df_samasa, df_upasagga into df_sum_abbr
-df_sum_abbr = pd.concat([df_abbr_class, dfs['alph'], dfs['samasa'], dfs['upasagga']])
+df_sum_abbr = pd.concat([df_abbr_class, dfs['alph'], dfs['samasa'], dfs['upasagga'], dfs['roots']])
 
 # Save df_sum_abbr to a CSV file
 df_sum_abbr.to_csv("../../dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_abbr.csv", sep="\t", index=False)
 
-# Print completion message in green color
-print("\033[32mExtraction df_sum_abbr for class complete.\033[0m")
+row_count = len(df_sum_abbr)
+print("Number of rows:", row_count)
+
+console.print("[bold green]extracting df_sum_sandhi for class.")
 
 # Concatenate the DataFrames and store the result in df_sum_sandhi
 df_sum_sandhi = pd.concat([
@@ -73,25 +88,31 @@ df_sum_sandhi = pd.concat([
     dfs['change_s'],
     dfs['irr_base'],
     dfs['taddhita'],
-    dfs['kitaka']
+    dfs['kitaka'],
+    dfs['vuddhi']
 ])
 
 # Save df_sum_sandhi to a CSV file
 df_sum_sandhi.to_csv("../../dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_sandhi.csv", sep="\t", index=False)
 
-# Print completion message in green color
-print("\033[32mExtraction df_sum_sandhi for class complete.\033[0m")
+row_count = len(df_sum_sandhi)
+print("Number of rows:", row_count)
+
+console.print("[bold green]extracting cl_sum_gramm for class.")
 
 # Concatenate all DataFrames except those in df_sum_abbr and df_sum_sandhi
 dfs_to_concat = [
     dfs[sheet_name] for sheet_name in excel_file.sheet_names 
-    if sheet_name not in ['abbr', 'alph', 'samasa', 'upasagga', 'v_sandhi', 'c_sandhi', 
-        'm_sandhi', 'assim', 'mx_sandhi', 'change_s', 'irr_base', 'taddhita', 'kitaka']
+    if sheet_name not in ['abbr', 'alph', 'samasa', 'upasagga', 'roots', 'v_sandhi', 'c_sandhi', 
+        'm_sandhi', 'assim', 'mx_sandhi', 'change_s', 'irr_base', 'taddhita', 'kitaka', 'vuddhi']
 ]
 df_sum_gramm = pd.concat(dfs_to_concat)
 
 # Save df_sum_gramm to a CSV file
 df_sum_gramm.to_csv("../../dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_gramm.csv", sep="\t", index=False)
+
+row_count = len(df_sum_gramm)
+print("Number of rows:", row_count)
 
 # Save the column list of df_sum_abbr to a text file
 file_path = "../../sasanarakkha/study-tools/anki-style/field-list-grammar-abbr.txt"
@@ -108,5 +129,4 @@ file_path = "../../sasanarakkha/study-tools/anki-style/field-list-grammar-gramm.
 with open(file_path, "w") as file:
     file.write('\n'.join(df_sum_gramm.columns))
 
-# Print completion message in green color
-print("\033[32mExtraction df_sum_gramm for class complete.\033[0m")
+toc()
