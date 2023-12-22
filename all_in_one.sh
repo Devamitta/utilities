@@ -33,10 +33,6 @@ while true; do
     esac
 done
 
-cd "/home/deva/Downloads"
-
-mv -f "grammar.xlsx" "/home/deva/Documents/pali_resources/pāli-course/grammar.xlsx"
-
 cd "/home/deva/Documents/dps/utilities"
 
 # grammar.xlsx - https://docs.google.com/spreadsheets/d/1KV5LmebIQpNyNKl03Pmo_Ti-LNW3IYWB6uc7OfGRGPU/
@@ -56,7 +52,6 @@ while true; do
             echo -e "\033[1;31m Please enter only yes or no\033[0m";;
     esac
 done
-
 
 while true; do
     echo -e "\033[1;36m please save all class anki decks! \033[0m"
@@ -165,7 +160,7 @@ while true; do
     case $yn in
         [Yy]* )
             echo -e "\033[1;33m opening releases page...\033[0m"
-            google-chrome study-tools-releases.html &
+            firefox study-tools-releases.html &
             break;;
         [Nn]* )
             break;;
