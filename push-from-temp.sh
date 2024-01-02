@@ -26,5 +26,5 @@ if [ ! -e "$filename" ]; then
   exit 1
 fi
 
-gh release upload --clobber "artifacts-20.12.2023_06-52-51" "$filename"
+gh release upload --clobber "artifacts-01.01.2024_03-06-47" "$filename"
 

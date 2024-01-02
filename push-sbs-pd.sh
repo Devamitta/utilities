@@ -12,6 +12,6 @@ echo -e "\033[1;32m sbs-pd moved on the server \033[0m"
 
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-20.12.2023_06-52-51' temp-push/sbs-pd.zip
+gh release upload --clobber 'artifacts-01.01.2024_03-06-47' temp-push/sbs-pd.zip
 
 echo -e "\033[1;32m sbs-pd uploaded on GitHub \033[0m"
