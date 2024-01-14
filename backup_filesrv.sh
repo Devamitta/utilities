@@ -24,7 +24,7 @@ else
     echo "/home/deva/filesrv1/share2 is mounted already"
 fi
 
-rsync -azxi --no-links --exclude-from='/home/deva/.rsync-exclude' /home/deva/Audio /home/deva/Videos /home/deva/Documents /home/deva/backups /home/deva/logs "/home/deva/filesrv1/share1/devamitta/"
+rsync -azxi --no-links --exclude-from='/home/deva/Documents/dps/.rsync-exclude' /home/deva/Audio /home/deva/Videos /home/deva/Documents /home/deva/backups /home/deva/logs "/home/deva/filesrv1/share1/devamitta/"
 
 echo "------ backup_filesrv Script Ended at $(date) ------"
 

@@ -34,19 +34,9 @@ cp -f "Suttas Advanced Pali Class.apkg" "/home/deva/Documents/sasanarakkha/study
 
 mv -f "Suttas Advanced Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/Suttas Advanced Pali Class.apkg"
 
-
-
 echo "all apkg - done"
 
-# cp -rf "/home/deva/Documents/dps/word-frequency/vocab" "/home/deva/Documents/sasanarakkha/study-tools/pali-class/"
-
-# cp -rf "/home/deva/Documents/dps/word-frequency/vocab" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/"
-
-# echo "all vocab.xlsx - done"
-
 cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class"/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/csvs/"
-
-# cp -rf "/home/deva/Documents/dps/csv-for-anki/grammar" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/"
 
 # cp -f "/home/deva/Documents/dps/csv-for-anki/abbr.xlsx" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/abbreviations.xlsx"
 

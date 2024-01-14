@@ -20,7 +20,7 @@ git commit -m "$commit_message"
 # Push the changes to the remote repository (GitHub)
 git push
 
-echo "------ backup_filesrv Script Ended at $(date) ------"
+echo "------ backup_notes Script Ended at $(date) ------"
 
 
 
