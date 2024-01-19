@@ -13,10 +13,8 @@ while true; do
         [Yy]* )
             bash anki.sh
             break;;
-        [Nn]* )
+        * )
             break;;
-        *  )
-            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
     esac
 done
 
@@ -31,10 +29,8 @@ while true; do
             echo -e "\033[1;33m pushing vocab for classes...\033[0m"
             bash generate_and_push_vocab.sh
             break;;
-        [Nn]* )
+        * )
             break;;
-        *  )
-            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
     esac
 done
 
@@ -49,10 +45,8 @@ while true; do
             echo -e "\033[1;33m generating grammar.csv...\033[0m"
             poetry run python anki_class_grammar.py
             break;;
-        [Nn]* )
+        * )
             break;;
-        *  )
-            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
     esac
 done
 
@@ -69,10 +63,8 @@ while true; do
             echo -e "\033[1;33m generating patimokkha.csv...\033[0m"
             bash make_pat.sh
             break;;
-        [Nn]* )
+        * )
             break;;
-        *  )
-            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
     esac
 done
 
@@ -87,10 +79,8 @@ while true; do
             echo -e "\033[1;33m moving all classes...\033[0m"
             bash move-class.sh
             break;;
-        [Nn]* )
+        * )
             break;;
-        *  )
-            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
     esac
 done
 
@@ -104,10 +94,8 @@ while true; do
             echo -e "\033[1;33m moving all other decks...\033[0m"
             bash move-decks.sh
             break;;
-        [Nn]* )
+        * )
             break;;
-        *  )
-            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
     esac
 done
 
@@ -119,10 +107,8 @@ while true; do
             echo -e "\033[1;33m pushing all...\033[0m"
             bash push-from-temp.sh
             ;;
-        [Nn]* )
+        * )
             break;;
-        *  )
-            echo -e "\033[1;31mPlease enter only yes or no\033[0m";;
     esac
 
     # Ask if the user wants to repeat
@@ -131,10 +117,8 @@ while true; do
     case $repeat in
         [Yy]* )
             continue;;
-        [Nn]* )
-            break;;
         * )
-            echo -e "\033[1;31mPlease enter only yes or no\033[0m";;
+            break;;
     esac
 done
 
@@ -149,10 +133,8 @@ while true; do
             echo -e "\033[1;33m pushing all...\033[0m"
             bash github-assets-uploader.sh
             break;;
-        [Nn]* )
-            break;;
         *  )
-            echo -e "\033[1;31m Please enter only yes or no\033[0m";;
+            break;;
     esac
 done
 
@@ -171,10 +153,8 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 #             echo -e "\033[1;33m opening dps.code-workspace...\033[0m"
 #             code dps.code-workspace &
 #             break;;
-#         [Nn]* )
+#         * )
 #             break;;
-#         *  )
-#             echo -e "\033[1;31m Please enter only yes or no\033[0m";;
 #     esac
 # done
 
@@ -190,10 +170,8 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 #             echo -e "\033[1;33m opening releases page...\033[0m"
 #             firefox study-tools-releases.html &
 #             break;;
-#         [Nn]* )
+#         * )
 #             break;;
-#         *  )
-#             echo -e "\033[1;31m Please enter only yes or no\033[0m";;
 #     esac
 # done
 
