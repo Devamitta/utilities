@@ -101,8 +101,8 @@ bpc=(
     "[BPC Exercises 1 - 7](https://docs.google.com/document/d/13BVDI3SSNqfd2gmv-cnUZynJ63es7-0TNkqXP95Wqb0/)|"
     "[BPC Exercises 8 - 11](https://docs.google.com/document/d/19u1_BuP1ovgjqGf8GWkCE2zlS977jnHE6MXHv5EPBXU/)|"
     "[BPC Exercises 12 - 15](https://docs.google.com/document/d/11QMWMTxnxkz5YeHnlxm1YJap2VxAeXTK9_j2F-6o5OI/)|"
-    "[BPC Key to Exercises 1 - 7](https://docs.google.com/document/d/14ZtcfunRroZl5yvxQdUojMXOj83IAqhIWFUjw5hC2pY/)|"
-    "[BPC Key to Exercises 8 - 11](https://docs.google.com/document/d/11qnZ0ZmhmCCMv8A8cypJbBEtTkJogwHapQevFFknukA/)|"
+    "[BPC Key to Exercises 01 - 7](https://docs.google.com/document/d/14ZtcfunRroZl5yvxQdUojMXOj83IAqhIWFUjw5hC2pY/)|"
+    "[BPC Key to Exercises 08 - 11](https://docs.google.com/document/d/11qnZ0ZmhmCCMv8A8cypJbBEtTkJogwHapQevFFknukA/)|"
     "[BPC Key to Exercises 12 - 15](https://docs.google.com/document/d/1UfbHEn3KJxSWB1xQteULZmUOTvFONrgXoJ1tmm7Ma-Q/)|"
 )
 
@@ -195,6 +195,8 @@ for link in "${sa[@]}"; do
     wget -O "sa/$title.pdf" "$url/export?format=pdf"
 done
 
+cd "/home/deva/temp"
+
 # Copy folders on the server
 cp -rf bpc/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/beginner/"
 
@@ -207,6 +209,10 @@ cp -rf sa/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class
 cp -rf per/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/PER analysis/"
 
 echo "Copied folders to the fileserver"
+
+cd "/home/deva/.local/bin"
+
+bash make_comb_class.sh
 
 echo "------ backup_filesrv Script Ended at $(date) ------"
 

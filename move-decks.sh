@@ -13,7 +13,7 @@ echo "SBS-PD & pali-ru-dict moved to temp-push"
 cd "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs"
 
 cp "anki_patimokkha.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Pātimokkha Word By Word/patimokkha-word-by-word.csv"
-mv "anki_patimokkha.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/patimokkha-word-by-word.csv"
+cp "anki_patimokkha.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/patimokkha-word-by-word.csv"
 cp "anki_dps.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Пали Словарь Анки/ru-pali-vocab.csv"
 mv "anki_dps.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-vocab.csv" 
 cp "anki_sbs.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/SBS Pāli-English Vocab/sbs-pd.csv"
