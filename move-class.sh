@@ -36,7 +36,23 @@ mv -f "Suttas Advanced Pali Class.apkg" "/home/deva/filesrv1/share1/Sharing betw
 
 echo "all apkg - done"
 
-cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class"/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/csvs/"
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/"* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/csvs/"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/class_all.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/vocab-pali-class.csv"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/class_all.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/vocab-pali-class.csv"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/phonetic_class.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/phonetic-pali-class.csv"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/roots_class.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/roots-pali-class.csv"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/suttas_class.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/suttas-advanced-pali-class.csv"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_abbr.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/grammar-pali-class-abbr.csv"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_gramm.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/grammar-pali-class-gramm.csv"
+
+cp -rf "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_sandhi.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/grammar-pali-class-sandhi.csv"
 
 # cp -f "/home/deva/Documents/dps/csv-for-anki/abbr.xlsx" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/Anki Decks/abbreviations.xlsx"
 

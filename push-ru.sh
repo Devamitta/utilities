@@ -14,7 +14,7 @@ echo -e "\033[1;32m ru-dict moved on the server \033[0m"
 
 cd "/home/deva/Documents/sasanarakkha/study-tools"
 
-gh release upload --clobber 'artifacts-26.01.2024_13-16' temp-push/ru-pali-dict.zip
+gh release upload --clobber 'artifacts-09.02.2024_07-04 ' temp-push/ru-pali-dict.zip
 
 
 echo -e "\033[1;32m ru-dict uploaded on GitHub \033[0m"
