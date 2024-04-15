@@ -1,4 +1,5 @@
 dpd-db
+temp
 sasanarakkha
 Dhammapada_Course
 scripts
@@ -11,7 +12,11 @@ output
 utilities
 SBSRegex
 DiffText
+simsapa
 devamitta.github.io
+rus_dpd_git
+rus-digitalpalidictionary
+digitalpalidictionary.github.io
 other-dictionaries-goldendict
 __pycache__
 .gitignore

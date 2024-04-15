@@ -19,6 +19,7 @@ def main():
     tic()
     moving_grammar()
     make_grammar_csvs()
+    check_duplicate_ids()
     toc()
 
 
@@ -50,6 +51,38 @@ def moving_grammar():
         print("\033[1;31m grammar.xlsx is missing.\033[0m")
 
 
+def check_duplicate_ids():
+    # Load the Excel file into a pandas ExcelFile object
+    excel_file = pd.ExcelFile('../../pali_resources/pāli-course/grammar.xlsx')
+    
+    # Dictionary to store [id] values from each sheet
+    id_dict = {}
+    
+    # Loop through each sheet in the Excel file
+    for sheet_name in excel_file.sheet_names:
+        # Read the current sheet into a DataFrame
+        df = excel_file.parse(sheet_name)
+        
+        # Check if df is a DataFrame
+        if isinstance(df, pd.DataFrame):
+            # Check if the first column exists and is named 'id'
+            if df.columns[0] == 'id':
+                # Iterate through each [id] value in the first column
+                for id_value in df[df.columns[0]]:
+                    # Check if the [id] value is already in the dictionary
+                    if id_value in id_dict:
+                        # If it is, print the [id] value in red
+                        console.print(f"[red]{id_value}[/red]", end=" ")
+                    else:
+                        # If not, add the [id] value to the dictionary
+                        id_dict[id_value] = True
+            else:
+                print(f"Sheet {sheet_name} does not have an 'id' column as the first column.")
+        else:
+            print(f"Sheet {sheet_name} did not load as a DataFrame. It is a {type(df)}.")
+
+
+
 def make_grammar_csvs():
     # Load the Excel file into a pandas ExcelFile object
     excel_file = pd.ExcelFile('../../pali_resources/pāli-course/grammar.xlsx')
@@ -64,6 +97,11 @@ def make_grammar_csvs():
 
         # Check if df is a DataFrame
         if isinstance(df, pd.DataFrame):
+            # Convert the 'id' column to integers
+            if 'id' in df.columns:
+                df['id'] = df['id'].fillna(0).astype(int)
+
+
             # Convert the values in the '2nd column' to strings
             df.iloc[:, 1] = df.iloc[:, 1].astype(str)
 

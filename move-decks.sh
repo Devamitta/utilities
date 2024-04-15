@@ -3,11 +3,11 @@
 # move all decks on the server and GitHub
 
 
-cd "/home/deva/Documents/dps/exporter/share"
-cp "sbs-pd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-pd.zip"
-cp "ru-pali-dictionary.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-pali-dict.zip"
+# cd "/home/deva/Documents/dpd-db/exporter/share"
+# cp "ru-dpd-mdict.mdx" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-dpd-mdict.mdx"
+# cp "ru-dpd.zip" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/ru-dpd.zip"
 
-echo "SBS-PD & pali-ru-dict moved to temp-push"
+# echo "SBS-PD & pali-ru-dict moved to temp-push"
 
 
 cd "/home/deva/Documents/dpd-db/dps/csvs/anki_csvs"
