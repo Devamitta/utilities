@@ -5,13 +5,15 @@ import pandas as pd
 import sys
 import os
 import shutil
+from datetime import datetime
 
 from rich.console import Console
 
 sys.path.append("/home/deva/Documents/dpd-db") # https://github.com/digitalpalidictionary/dpd-db
 
-from tools.tic_toc import tic, toc
+from tools.tic_toc import tic, toc # type: ignore
 
+current_date = datetime.now().strftime('%d-%m')
 
 console = Console()
 
@@ -115,6 +117,9 @@ def make_grammar_csvs():
             # Reset the index and drop the old index
             df.reset_index(drop=True, inplace=True)
 
+            # Add the current date to the DataFrame as test
+            df['test'] = current_date
+
             # Store the DataFrame in the dictionary with the sheet name as the key
             dfs[sheet_name] = df
         else:
@@ -123,15 +128,20 @@ def make_grammar_csvs():
     # Now you can access each DataFrame using its sheet name as a key
     # For example, dfs['Sheet1'] will give you the DataFrame for 'Sheet1', and so on.
 
-    console.print("[bold green]extracting abbreviations.csv for exporter.")
 
-    # Save the DataFrame to a CSV file after dropping unnecessary columns
-    trimmed_df = dfs['abbr'].drop(columns=['id', 'type', 'pattern', 'feedback'])
-    trimmed_df.to_csv("../exporter/assets/abbreviations.csv", sep="\t", index=False, header=True)
+    abr_dir = "../exporter/assets/abbreviations.csv"
 
-    # Printing the number of rows in the trimmed DataFrame
-    row_count = len(trimmed_df)
-    print("Number of rows:", row_count)
+    if os.path.exists(abr_dir):
+        console.print("[bold green]extracting abbreviations.csv for exporter.")
+        # Save the DataFrame to a CSV file after dropping unnecessary columns
+        trimmed_df = dfs['abbr'].drop(columns=['id', 'type', 'pattern', 'feedback'])
+        trimmed_df.to_csv(abr_dir, sep="\t", index=False, header=True)
+
+        # Printing the number of rows in the trimmed DataFrame
+        row_count = len(trimmed_df)
+        print("Number of rows:", row_count)
+    else:
+        console.print("[bold red]abbreviations.csv does not exist.")
 
     console.print("[bold green]extracting df_sum_abbr for class.")
 
@@ -188,20 +198,27 @@ def make_grammar_csvs():
     row_count = len(df_sum_gramm)
     print("Number of rows:", row_count)
 
-    # Save the column list of df_sum_abbr to a text file
-    file_path = "../../sasanarakkha/study-tools/anki-style/field-list-grammar-abbr.txt"
-    with open(file_path, "w") as file:
-        file.write('\n'.join(df_sum_abbr.columns))
+    sbs_dir = "../../sasanarakkha/study-tools/anki-style/"
 
-    # Save the column list of df_sum_sandhi to a text file
-    file_path = "../../sasanarakkha/study-tools/anki-style/field-list-grammar-sandhi.txt"
-    with open(file_path, "w") as file:
-        file.write('\n'.join(df_sum_sandhi.columns))
+    if os.path.exists(sbs_dir):
 
-    # Save the column list of df_sum_gramm to a text file
-    file_path = "../../sasanarakkha/study-tools/anki-style/field-list-grammar-gramm.txt"
-    with open(file_path, "w") as file:
-        file.write('\n'.join(df_sum_gramm.columns))
+        # Save the column list of df_sum_abbr to a text file
+        grammar_abbr_path = os.path.join(sbs_dir, 'field-list-grammar-abbr.txt')
+        with open(grammar_abbr_path, "w") as file:
+            file.write('\n'.join(df_sum_abbr.columns))
+
+        # Save the column list of df_sum_sandhi to a text file
+        grammar_sandhi_path = os.path.join(sbs_dir, 'field-list-grammar-sandhi.txt')
+        with open(grammar_sandhi_path, "w") as file:
+            file.write('\n'.join(df_sum_sandhi.columns))
+
+        # Save the column list of df_sum_gramm to a text file
+        grammar_grammar_path = os.path.join(sbs_dir, 'field-list-grammar-gramm.txt')
+        with open(grammar_grammar_path, "w") as file:
+            file.write('\n'.join(df_sum_gramm.columns))
+
+    else:
+        console.print("[bold red]Study-tools/anki-style directory does not exist.")
 
 
 if __name__ == "__main__":
