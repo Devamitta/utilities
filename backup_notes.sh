@@ -8,7 +8,7 @@ echo "------ backup_notes Script Started at $(date) ------"
 current_date=$(date +"%Y-%m-%d")
 
 # Change to your GitHub repository directory
-cd Documents/notes/
+cd Documents/note/
 
 # Add all changes to the staging area
 git add .

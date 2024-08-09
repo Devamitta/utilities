@@ -55,7 +55,7 @@ cd "/home/deva/Documents/dps/patimokkha_dict"
 # Pātimokkha ODS - https://docs.google.com/spreadsheets/d/1rS-IlX4DvKmnBO58KON37eVnOZqwfkG-ot-zIjCuzH4/
 
 while true; do
-    echo -e "\033[1;36m please download the latest Pātimokkha ODS! \033[0m"
+    echo -e "\033[1;36m please download the latest Pātimokkha XLSX! \033[0m"
     echo -ne "\033[1;34m need to generate patimokkha.csv? \033[0m"
     read yn
     case $yn in
