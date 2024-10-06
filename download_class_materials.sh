@@ -1,10 +1,16 @@
 #!/bin/bash
 
+# Check for internet connection
+if ! ping -c 1 google.com &> /dev/null; then
+    echo "Error: No internet connection. Please check your network settings."
+    exit 1
+fi
+
 exec > >(tee "/home/deva/logs/download_class_materials.log") 2>&1
 
 echo "--- download_class_materials Script Started at $(date) ---"
 
-cd "/home/deva/temp"
+cd "/home/deva/offline_materials"
 
 
 per=(
@@ -136,6 +142,12 @@ sa=(
     "[Saḷāyatana Saṁyutta (SN 35) p1](https://docs.google.com/document/d/1uyOA--pUQlHTzs1GWFQHorXkeVkwBEmJdWmPMBWoBXc/)|"
     "[Saḷāyatana Saṁyutta (SN 35) p2](https://docs.google.com/document/d/1OAlO5q91aYzVf8UrbmvOvHOni3SAKrAvEoCKrfzVZ0Q/)|"
     "[Saḷāyatana Saṁyutta (SN 35) p3](https://docs.google.com/document/d/1K6UwT_WEbC0SNXVVfl9aUzd3nPBtKN3k1fRpH2STd2s/)|"
+    "[Nidāna Saṃyutta (SN 12)](https://docs.google.com/document/d/1rSgxc6Hg8Pt63nU1fdG8j7QpobBRYbeDEE9KoZ9c6UQ/)|"
+    "[Satipaṭṭhāna Saṃyutta (SN 47)](https://docs.google.com/document/d/1h-Xhkskz1-gchNBDG08QQJ-AqUs-sIimSBnDizvMibQ/)|"
+    "[Bojjhaṅgasaṃyutta Saṃyutta (SN 46)](https://docs.google.com/document/d/11674RA0aMFbJuzdJ8LpVQIb3FRXRuoVRuWZ7IPA70Xc/)|"
+    "[Maggasaṃyutta Saṃyutta (SN 45)](https://docs.google.com/document/d/1Efn0qcwgBoVdtx9GfU9Ia9lQYwMgYAjNvDyUVH9RlnM/)|"
+    "[Asaṅkhata Saṃyutta (SN 43)](https://docs.google.com/document/d/1yDVS30Mha1T5cQ0-AkDW0_LJ2QhDU-3tdrBq7byKJ5w/)|"
+
 )
 
 
@@ -195,20 +207,29 @@ for link in "${sa[@]}"; do
     wget -O "sa/$title.pdf" "$url/export?format=pdf"
 done
 
-cd "/home/deva/temp"
+cd "/home/deva/offline_materials"
 
-# Copy folders on the server
-cp -rf bpc/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/beginner/"
+# Check if the fileserver is mounted
+if [ -d "/home/deva/filesrv1/share1/Sharing between users" ]; then
 
-cp -rf ipc/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/intermediate/"
+    echo "Moving folders to the fileserver"
 
-cp -rf apc/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/advanced/"
+    # Copy folders on the server
+    cp -rf bpc/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/beginner/"
 
-cp -rf sa/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/suttas alalysis/"
+    cp -rf ipc/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/intermediate/"
 
-cp -rf per/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/PER analysis/"
+    cp -rf apc/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/advanced/"
 
-echo "Copied folders to the fileserver"
+    cp -rf sa/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/suttas alalysis/"
+
+    cp -rf per/* "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/offline materials/PER analysis/"
+
+    echo "Copied folders to the fileserver"
+
+else
+    echo "Fileserver is not mounted. Skipping copying folders."
+fi
 
 cd "/home/deva/.local/bin"
 

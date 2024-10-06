@@ -22,6 +22,8 @@ cp "anki_dhp.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyo
 mv "anki_dhp.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/dhp-vocab.csv"
 cp "anki_parittas.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Parittas/parittas.csv"
 mv "anki_parittas.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/parittas.csv"
+cp "anki_vibhanga.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Vibhanga/vibhanga.csv"
+mv "anki_vibhanga.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/vibhanga.csv"
 
 
 cd "/home/deva/Downloads"
@@ -38,6 +40,9 @@ cp "Pali Parittas.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For 
 mv "Pali Parittas.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/parittas.apkg"
 cp "Pali Patimokkha Memorizing.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Pātimokkha Learning/pātimokkha learning.apkg"
 mv "Pali Patimokkha Memorizing.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/patimokkha-learning.apkg"
+cp "Pali Bhikkhu Vibhanga.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Vibhanga/vibhanga.apkg"
+mv "Pali Bhikkhu Vibhanga.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/vibhanga.apkg"
+
 
 # cp "Ñāṇatiloka Dictionary.apkg" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Ñāṇatiloka Dictionary/nanatiloka-dictionary.apkg"
 # mv "Ñāṇatiloka Dictionary.apkg" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/nanatiloka-dictionary.apkg"

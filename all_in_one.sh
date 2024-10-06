@@ -4,14 +4,16 @@
 
 echo -e "\033[1;33m We are going to make various csv and push decks on the server. \033[0m"
 
-cd '/home/deva/.local/bin'
+cd "/home/deva/Documents/dpd-db/"
+
+
 
 while true; do
     echo -ne "\033[1;34m need to make latest csv for anki? \033[0m"
     read yn
     case $yn in
         [Yy]* )
-            bash anki.sh
+            poetry run python dps/scripts/anki_csvs.py
             break;;
         * )
             break;;

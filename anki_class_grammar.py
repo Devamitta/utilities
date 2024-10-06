@@ -148,11 +148,10 @@ def make_grammar_csvs():
     # Filter the DataFrame to include only rows where 'type' column is not null
     filtered_df = dfs['abbr'][dfs['abbr']['type'].notna()]
 
-    # Drop unnecessary columns from the filtered DataFrame
-    df_abbr_class = filtered_df.drop(columns=['ru-meaning', 'ru-abbrev', 'type'])
-
     # Concatenate df_abbr_class, df_alph, df_samasa, df_upasagga into df_sum_abbr
-    df_sum_abbr = pd.concat([df_abbr_class, dfs['alph'], dfs['samasa'], dfs['upasagga'], dfs['roots']])
+    df_abbr_class = filtered_df.drop(columns=['ru-meaning', 'ru-abbrev', 'type'])
+    df_upasagga_filtered = dfs['upasagga'][dfs['upasagga']['example'].notna()]
+    df_sum_abbr = pd.concat([df_abbr_class, dfs['alph'], dfs['samasa'], df_upasagga_filtered, dfs['roots']])
 
     # Save df_sum_abbr to a CSV file
     df_sum_abbr.to_csv("../../dpd-db/dps/csvs/anki_csvs/pali_class/grammar/cl_sum_abbr.csv", sep="\t", index=False)
