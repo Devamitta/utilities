@@ -8,12 +8,39 @@ cd "/home/deva/Documents/dpd-db/"
 
 
 
+# Ask the user if they want to attempt to mount the fileserver
+while true; do
+    echo -ne "\033[1;34m Do you want to attempt to mount the fileserver? \033[0m"
+    read mount_confirm
+    case $mount_confirm in
+        [Yy]* )
+            # Check if the directory is not mounted
+            if ! grep -qs '/home/deva/filesrv1/share1' /proc/mounts; then
+                # Try to mount it. If mounting fails, exit.
+                if ! mount /home/deva/filesrv1/share1; then
+                    echo "Failed to mount /home/deva/filesrv1/share1. Exiting."
+                    exit 1
+                else
+                    echo -e "\033[1;32m share1 successfully mounted \033[0m"
+                fi
+            else 
+                echo "/home/deva/filesrv1/share1 is mounted already"    
+            fi
+            break;;
+        * )
+            break;;
+    esac
+done
+
+
+
 while true; do
     echo -ne "\033[1;34m need to make latest csv for anki? \033[0m"
     read yn
     case $yn in
         [Yy]* )
-            poetry run python dps/scripts/anki_csvs.py
+            uv run python dps/scripts/change_in_db/class_relation.py
+            uv run python dps/scripts/export_from_db/anki_csv.py
             break;;
         * )
             break;;
@@ -45,7 +72,8 @@ while true; do
     case $yn in
         [Yy]* )
             echo -e "\033[1;33m generating grammar.csv...\033[0m"
-            poetry run python anki_class_grammar.py
+            uv run bash download_grammar.sh
+            uv run python anki_class_grammar.py
             break;;
         * )
             break;;
@@ -86,6 +114,20 @@ while true; do
     esac
 done
 
+while true; do
+    echo -ne "\033[1;34m need to create wordtree for all classes? \033[0m"
+    read yn
+    case $yn in
+        [Yy]* )
+            echo -e "\033[1;33m creating wordtree...\033[0m"
+            bash wordtree.sh
+            break;;
+        * )
+            break;;
+    esac
+done
+
+
 
 while true; do
     echo -e "\033[1;36m please save all other anki decks! \033[0m"
@@ -102,33 +144,27 @@ while true; do
 done
 
 while true; do
-    echo -ne "\033[1;34m need to push individually on GitHub? \033[0m"
-    read yn
-    case $yn in
+    echo -ne "\033[1;34m need to push individually on GitHub and repeat? \033[0m"
+    read answer
+    case $answer in
         [Yy]* )
-            echo -e "\033[1;33m pushing all...\033[0m"
-            bash push-from-temp.sh
+            echo -e "\033[1;33m Pushing all...\033[0m"
+            bash push-from-temp.sh  
+            ;;                      # start over
+        * )
+            break                    
             ;;
-        * )
-            break;;
-    esac
-
-    # Ask if the user wants to repeat
-    echo -ne "\033[1;34m repeat? \033[0m"
-    read repeat
-    case $repeat in
-        [Yy]* )
-            continue;;
-        * )
-            break;;
     esac
 done
 
 
 cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push"
 
+echo -ne "\033[1;34m before pushing all on GitHub need to make zip for all class docs \033[0m"
+
+
 while true; do
-    echo -ne "\033[1;34m need to push on GitHub? \033[0m"
+    echo -ne "\033[1;34m need to push all on GitHub? \033[0m"
     read yn
     case $yn in
         [Yy]* )
@@ -139,10 +175,6 @@ while true; do
             break;;
     esac
 done
-
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "please change all artifacts in dps via VSCode"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 
 # cd "/home/deva/Documents"

@@ -4,15 +4,12 @@
 
 cd "/home/deva/Documents/dpd-db/"
 
-poetry run python dps/scripts/save_csv_class_vocab.py
+uv run python dps/scripts/export_from_db/save_classes_vocab_individual.py
+uv run python dps/scripts/export_from_db/save_classes_vocab_united.py
 
 cp -rf "/home/deva/Documents/sasanarakkha/study-tools/pali-class/vocab/vocab-for-classes.xlsx" "/home/deva/filesrv1/share1/Sharing between users/13 For Pāli class/vocab-for-classes.xlsx"
 
 echo "vocab-for-classes.xlsx - done"
-
-cd "/home/deva/Documents/sasanarakkha/study-tools/pali-class/vocab/"
-
-python3.11 convert-csv-to-html.py
 
 echo "------ pushing to git $(date) ------"
 

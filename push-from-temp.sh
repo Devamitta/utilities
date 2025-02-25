@@ -1,8 +1,12 @@
-#!/usr/bin/env bash
+#  Function to get the latest release tag from GitHub
+get_latest_release() {
+    repo_owner="sasanarakkha"
+    repo_name="study-tools"
+    gh api "repos/$repo_owner/$repo_name/releases/latest" --jq '.tag_name'
+}
 
-# push (somthing from temp) on latest release in GitHub
-
-cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push"
+# Set the directory you want to work in
+cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push" || exit
 
 # Print current working directory
 echo "Current working directory: $(pwd)"
@@ -16,15 +20,23 @@ read -p "Enter the full filename (including extension): " filename
 
 # Check if the user provided an argument
 if [ -z "$filename" ]; then
-  echo "Filename cannot be empty. Exiting."
-  exit 1
+    echo "Filename cannot be empty. Exiting."
+    exit 1
 fi
 
 # Ensure the file exists before attempting to upload
 if [ ! -e "$filename" ]; then
-  echo "File '$filename' does not exist. Exiting."
-  exit 1
+    echo "File '$filename' does not exist. Exiting."
+    exit 1
 fi
 
-gh release upload --clobber "artifacts-21.05.2024_01-50" "$filename"
+# Fetch the latest release
+latest_release=$(get_latest_release)
+if [ -z "$latest_release" ]; then
+    echo "Unable to get latest release. Exiting."
+    exit 1
+fi
 
+# Upload the file to the latest release
+echo "Uploading '$filename' to the release: $latest_release"
+gh release upload "$latest_release" "$filename" --clobber

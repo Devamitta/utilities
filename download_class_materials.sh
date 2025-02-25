@@ -2,7 +2,7 @@
 
 # Check for internet connection
 if ! ping -c 1 google.com &> /dev/null; then
-    echo "Error: No internet connection. Please check your network settings."
+    echo "\033[0;31mError: No internet connection. Please check your network settings."
     exit 1
 fi
 
@@ -132,21 +132,16 @@ apc=(
 sa=(
     "[pubbakicca Dhammayuttika](https://docs.google.com/document/d/1z4B3TELrZlVemxP_gB0ciampFTIOS5hL/)|"
 
-    "[MN 107 gaṇakamoggallānasuttaṁ](https://docs.google.com/document/d/1oW92myGIHzLypzNQGQPa0YeTGDfVq_Aogre8sLTRQuM/)|"
+    "[1. MN 107 gaṇakamoggallānasuttaṁ](https://docs.google.com/document/d/1oW92myGIHzLypzNQGQPa0YeTGDfVq_Aogre8sLTRQuM/)|"
 
-    "[Sacca Saṁyutta (SN 56) p1](https://docs.google.com/document/d/1QvmDByxRI4hMT3C8EqrafaGoXC5HA_8kRn730-VtKjY/)|"
-    "[Sacca Saṁyutta (SN 56) p2](https://docs.google.com/document/d/1npr7IQbpQ3X3GPMEa6arv1qGEOJ1hQTdvxSV_zDj8Ro/)|"
-    "[Khandha Saṁyutta (SN 22) p1](https://docs.google.com/document/d/1Ug89WXCTkP7p_afy0c-D6XIv_8Rg7mGGd9ti3ov7cG8/)|"
-    "[Khandha Saṁyutta (SN 22) p2](https://docs.google.com/document/d/1O-oQeRvJt0xhauPKk1GAwn6nNbYHPeXOyY41fvPvnoo/)|"
-    "[Khandha Saṁyutta (SN 22) p3](https://docs.google.com/document/d/1kt-OP0fUHEjR4pmc72ZljK8XD9oirssI1fMvfTvOhKw/)|"
-    "[Saḷāyatana Saṁyutta (SN 35) p1](https://docs.google.com/document/d/1uyOA--pUQlHTzs1GWFQHorXkeVkwBEmJdWmPMBWoBXc/)|"
-    "[Saḷāyatana Saṁyutta (SN 35) p2](https://docs.google.com/document/d/1OAlO5q91aYzVf8UrbmvOvHOni3SAKrAvEoCKrfzVZ0Q/)|"
-    "[Saḷāyatana Saṁyutta (SN 35) p3](https://docs.google.com/document/d/1K6UwT_WEbC0SNXVVfl9aUzd3nPBtKN3k1fRpH2STd2s/)|"
-    "[Nidāna Saṃyutta (SN 12)](https://docs.google.com/document/d/1rSgxc6Hg8Pt63nU1fdG8j7QpobBRYbeDEE9KoZ9c6UQ/)|"
-    "[Satipaṭṭhāna Saṃyutta (SN 47)](https://docs.google.com/document/d/1h-Xhkskz1-gchNBDG08QQJ-AqUs-sIimSBnDizvMibQ/)|"
-    "[Bojjhaṅgasaṃyutta Saṃyutta (SN 46)](https://docs.google.com/document/d/11674RA0aMFbJuzdJ8LpVQIb3FRXRuoVRuWZ7IPA70Xc/)|"
-    "[Maggasaṃyutta Saṃyutta (SN 45)](https://docs.google.com/document/d/1Efn0qcwgBoVdtx9GfU9Ia9lQYwMgYAjNvDyUVH9RlnM/)|"
-    "[Asaṅkhata Saṃyutta (SN 43)](https://docs.google.com/document/d/1yDVS30Mha1T5cQ0-AkDW0_LJ2QhDU-3tdrBq7byKJ5w/)|"
+    "[2. Sacca Saṁyutta (SN 56)](https://docs.google.com/document/d/1QvmDByxRI4hMT3C8EqrafaGoXC5HA_8kRn730-VtKjY/)|"
+    "[3. Khandha Saṁyutta (SN 22)](https://docs.google.com/document/d/1kt-OP0fUHEjR4pmc72ZljK8XD9oirssI1fMvfTvOhKw/)|"
+    "[4. Saḷāyatana Saṁyutta (SN 35)](https://docs.google.com/document/d/1uyOA--pUQlHTzs1GWFQHorXkeVkwBEmJdWmPMBWoBXc/)|"
+    "[5. Nidāna Saṃyutta (SN 12)](https://docs.google.com/document/d/1rSgxc6Hg8Pt63nU1fdG8j7QpobBRYbeDEE9KoZ9c6UQ/)|"
+    "[6. Satipaṭṭhāna Saṃyutta (SN 47)](https://docs.google.com/document/d/1h-Xhkskz1-gchNBDG08QQJ-AqUs-sIimSBnDizvMibQ/)|"
+    "[7. Bojjhaṅgasaṃyutta Saṃyutta (SN 46)](https://docs.google.com/document/d/11674RA0aMFbJuzdJ8LpVQIb3FRXRuoVRuWZ7IPA70Xc/)|"
+    "[8. Maggasaṃyutta Saṃyutta (SN 45)](https://docs.google.com/document/d/1Efn0qcwgBoVdtx9GfU9Ia9lQYwMgYAjNvDyUVH9RlnM/)|"
+    "[9. Asaṅkhata Saṃyutta (SN 43)](https://docs.google.com/document/d/1yDVS30Mha1T5cQ0-AkDW0_LJ2QhDU-3tdrBq7byKJ5w/)|"
 
 )
 
@@ -161,6 +156,12 @@ for link in "${per[@]}"; do
 
     # Generate and execute the wget command with the formatted title
     wget -O "per/$title.pdf" "$url/export?format=pdf"
+
+    # Check if the downloaded file exists
+    if [ ! -f "per/$title.pdf" ]; then
+        echo "\033[0;31mError: $title.pdf not available at $url\033[0m"
+        exit 1
+    fi
 done
 
 # Loop through the list of bpc and extract the title, URL, and folder
@@ -172,6 +173,12 @@ for link in "${bpc[@]}"; do
 
     # Generate and execute the wget command with the formatted title
     wget -O "bpc/$title.pdf" "$url/export?format=pdf"
+
+    # Check if the downloaded file exists
+    if [ ! -f "bpc/$title.pdf" ]; then
+        echo "\033[0;31mError: $title.pdf not available at $url\033[0m"
+        exit 1
+    fi
 done
 
 # Loop through the list of ipc and extract the title, URL, and folder
@@ -183,6 +190,12 @@ for link in "${ipc[@]}"; do
 
     # Generate and execute the wget command with the formatted title
     wget -O "ipc/$title.pdf" "$url/export?format=pdf"
+
+    # Check if the downloaded file exists
+    if [ ! -f "ipc/$title.pdf" ]; then
+        echo "\033[0;31mError: $title.pdf not available at $url\033[0m"
+        exit 1
+    fi
 done
 
 # Loop through the list of apc and extract the title, URL, and folder
@@ -194,6 +207,12 @@ for link in "${apc[@]}"; do
 
     # Generate and execute the wget command with the formatted title
     wget -O "apc/$title.pdf" "$url/export?format=pdf"
+
+    # Check if the downloaded file exists
+    if [ ! -f "apc/$title.pdf" ]; then
+        echo "\033[0;31mError: $title.pdf not available at $url\033[0m"
+        exit 1
+    fi
 done
 
 # Loop through the list of sa and extract the title, URL, and folder
@@ -205,6 +224,12 @@ for link in "${sa[@]}"; do
 
     # Generate and execute the wget command with the formatted title
     wget -O "sa/$title.pdf" "$url/export?format=pdf"
+
+    # Check if the downloaded file exists
+    if [ ! -f "sa/$title.pdf" ]; then
+        echo "\033[0;31mError: $title.pdf not available at $url\033[0m"
+        exit 1
+    fi
 done
 
 cd "/home/deva/offline_materials"
@@ -231,12 +256,17 @@ else
     echo "Fileserver is not mounted. Skipping copying folders."
 fi
 
+# Combine and clean materials to txt
 cd "/home/deva/.local/bin"
-
 bash make_comb_class.sh
+bash make_comb_suttas.sh
 
 echo "------ backup_filesrv Script Ended at $(date) ------"
 
+# Check if any errors occurred during the script execution
+if [ $? -ne 0 ]; then
+    echo "\033[0;31mError: Some PDFs were not available or an error occurred during the script execution.\033[0m"
+fi
 
 
 # export VISUAL=xed; crontab -e 

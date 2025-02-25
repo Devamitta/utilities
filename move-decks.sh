@@ -24,6 +24,7 @@ cp "anki_parittas.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For E
 mv "anki_parittas.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/parittas.csv"
 cp "anki_vibhanga.csv" "/home/deva/filesrv1/share1/Sharing between users/1 For Everyone/Software/Anki (learning tool)/Vibhanga/vibhanga.csv"
 mv "anki_vibhanga.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/vibhanga.csv"
+mv "sbs_rus.csv" "/home/deva/Documents/sasanarakkha/study-tools/temp-push/sbs-rus.csv"
 
 
 cd "/home/deva/Downloads"
