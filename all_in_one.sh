@@ -14,18 +14,7 @@ while true; do
     read mount_confirm
     case $mount_confirm in
         [Yy]* )
-            # Check if the directory is not mounted
-            if ! grep -qs '/home/deva/filesrv1/share1' /proc/mounts; then
-                # Try to mount it. If mounting fails, exit.
-                if ! mount /home/deva/filesrv1/share1; then
-                    echo "Failed to mount /home/deva/filesrv1/share1. Exiting."
-                    exit 1
-                else
-                    echo -e "\033[1;32m share1 successfully mounted \033[0m"
-                fi
-            else 
-                echo "/home/deva/filesrv1/share1 is mounted already"    
-            fi
+            mnt.sh
             break;;
         * )
             break;;
@@ -160,7 +149,7 @@ done
 
 cd "/home/deva/Documents/sasanarakkha/study-tools/temp-push"
 
-echo -ne "\033[1;34m before pushing all on GitHub need to make zip for all class docs \033[0m"
+# echo -ne "\033[1;34m before pushing all on GitHub need to make zip for all class docs \033[0m"
 
 
 while true; do
@@ -177,37 +166,18 @@ while true; do
 done
 
 
-# cd "/home/deva/Documents"
-
-# while true; do
-#     echo -ne "\033[1;34m need to open dps.code-workspace? \033[0m"
-#     read yn
-#     case $yn in
-#         [Yy]* )
-#             echo -e "\033[1;33m opening dps.code-workspace...\033[0m"
-#             code dps.code-workspace &
-#             break;;
-#         * )
-#             break;;
-#     esac
-# done
-
-# cd "/home/deva/Documents/sasanarakkha/study-tools"
-
-# bash replace-latest-release.sh
-
-# while true; do
-#     echo -ne "\033[1;34m need to open study-tools-releases.html? \033[0m"
-#     read yn
-#     case $yn in
-#         [Yy]* )
-#             echo -e "\033[1;33m opening releases page...\033[0m"
-#             firefox study-tools-releases.html &
-#             break;;
-#         * )
-#             break;;
-#     esac
-# done
+# Ask the user if they want to attempt to umount the fileserver
+while true; do
+    echo -ne "\033[1;34m Do you want to umount the fileserver? \033[0m"
+    read mount_confirm
+    case $mount_confirm in
+        [Yy]* )
+            umnt.sh
+            break;;
+        * )
+            break;;
+    esac
+done
 
 
 echo -e "\033[1;32m what have to be done has been done! \033[0m"
