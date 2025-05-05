@@ -109,7 +109,7 @@ def make_grammar_csvs():
 
             second_column_name = df.columns[1]
             df['feedback'] = df.apply(lambda row: (
-                f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/1Z8Jjt0-E0HNX7ygABIzAcrChG23M3IOyoZGQ-EDRzXY/viewform?usp=pp_url&entry.644913945"""
+                f"""Spot a mistake? <a class="link" href="https://docs.google.com/forms/d/1Z8Jjt0-E0HNX7ygABIzAcrChG23M3IOyoZGQ-EDRzXY/viewform?usp=pp_url&entry.438735500"""
                 f"""={row[second_column_name]}"""
                 f"""&entry.957833742=Anki Deck Grammar">Fix it here</a>"""
             ), axis=1)
